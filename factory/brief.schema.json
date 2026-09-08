@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Commercial Factory Brief",
+  "type": "object",
+  "required": ["campaignId", "product", "durationSec", "format", "creativeGoal"],
+  "properties": {
+    "campaignId": {"type": "string"},
+    "product": {"type": "string"},
+    "durationSec": {"type": "number", "minimum": 15, "maximum": 60},
+    "format": {"enum": ["vertical", "landscape", "square"]},
+    "creativeGoal": {"type": "string"},
+    "audience": {"type": "string"},
+    "claims": {"type": "array", "items": {"type": "string"}},
+    "constraints": {"type": "array", "items": {"type": "string"}}
+  }
+}

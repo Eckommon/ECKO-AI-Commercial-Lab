@@ -1,0 +1,23 @@
+{
+  "name": "ecko-ai-commercial-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-native commercial production lab: GPT-directed storyboards, generated visual assets, code-driven motion, and reproducible MP4 rendering.",
+  "scripts": {
+    "audio:aurora": "python scripts/generate_aurora_audio.py",
+    "assets:aurora": "node scripts/sync_aurora_assets.mjs",
+    "prepare:aurora": "npm run audio:aurora && npm run assets:aurora && npm run validate",
+    "studio": "remotion studio src/index.ts",
+    "render:aurora": "npm run prepare:aurora && remotion render src/index.ts AuroraColdBrew commercials/aurora-cold-brew/output/aurora-cold-brew-v1.mp4 --codec=h264 --crf=18",
+    "validate": "node scripts/validate.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.365",
+    "remotion": "^4.0.365",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}
