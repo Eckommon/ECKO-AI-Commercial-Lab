@@ -1,0 +1,15 @@
+{
+  "campaignId": "ACB-001",
+  "durationSec": 40,
+  "shots": [
+    {"id":"S01","startSec":0,"endSec":3,"purpose":"cold open and curiosity","asset":"shot-01-hero.png","motion":"slow push-in from black with atmospheric vignette","copy":""},
+    {"id":"S02","startSec":3,"endSec":7,"purpose":"premium tactile detail","asset":"shot-02-macro.png","motion":"macro diagonal drift with scale increase","copy":""},
+    {"id":"S03","startSec":7,"endSec":11,"purpose":"name the sensation","asset":"shot-03-portrait.png","motion":"slow vertical pan with hard text reveal","copy":"COLD."},
+    {"id":"S04","startSec":11,"endSec":16,"purpose":"establish aurora signature","asset":"shot-01-hero.png","motion":"reverse push with luminous scan overlay","copy":""},
+    {"id":"S05","startSec":16,"endSec":21,"purpose":"energy peak","asset":"shot-04-impact.png","motion":"impact zoom, micro shake and quick settle","copy":""},
+    {"id":"S06","startSec":21,"endSec":27,"purpose":"hero product recognition","asset":"shot-05-endcard.png","motion":"centered slow push-in","copy":"AURORA"},
+    {"id":"S07","startSec":27,"endSec":32,"purpose":"premium breathing room","asset":"shot-02-macro.png","motion":"slow digital orbit simulation via x/scale drift","copy":""},
+    {"id":"S08","startSec":32,"endSec":36,"purpose":"product character","asset":"shot-04-impact.png","motion":"subtle pullback under kinetic text","copy":"BOLD. SMOOTH. READY."},
+    {"id":"S09","startSec":36,"endSec":40,"purpose":"brand memory and close","asset":"shot-05-endcard.png","motion":"locked hero with glow pulse and fade to black","copy":"AWAKEN THE COLD."}
+  ]
+}
