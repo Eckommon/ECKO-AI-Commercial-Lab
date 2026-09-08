@@ -1,14 +1,21 @@
 from pathlib import Path
+import json
 import math
 import random
 import struct
 import wave
 
 SR = 48000
-DUR = 40.0
 OUT = Path(__file__).resolve().parents[1] / "commercials/aurora-cold-brew/audio/aurora-bed.wav"
+STORYBOARD = OUT.parents[1] / "storyboard/storyboard.json"
 OUT.parent.mkdir(parents=True, exist_ok=True)
 random.seed(7)
+
+with STORYBOARD.open(encoding="utf-8") as storyboard_file:
+    storyboard = json.load(storyboard_file)
+
+DUR = float(storyboard["durationSec"])
+CUE_TIMES = [float(shot["startSec"]) for shot in storyboard["shots"] if shot.get("sfx")]
 
 def env(t, a, b, attack=0.04, release=0.25):
     if t < a or t >= b:
@@ -32,7 +39,7 @@ for i in range(int(SR * DUR)):
         + 0.05 * math.sin(2 * math.pi * 110 * t)
     )
     pulse = 0.0
-    for at in [0, 7, 11, 16, 21, 27, 32, 36]:
+    for at in CUE_TIMES:
         pulse += 0.34 * hit(t, at, 58 if at != 16 else 44, 0.38)
     shimmer = 0.035 * math.sin(2 * math.pi * (420 + 20 * math.sin(t * 0.7)) * t)
     rise = env(t, 14.5, 16.2, 0.2, 0.05) * (

@@ -93,4 +93,19 @@ bash scripts/render_aurora_ffmpeg.sh
 
 **v1.0 / Benchmark #001 implemented as a working prototype.**
 
+## Factory v1.1 motion benchmark
+
+The Issue #2 upgrade preserves the v1.0 campaign contract and adds a governed scene-recipe timeline, deterministic cinematic camera curves, artifact-safe procedural depth, atmospheric particles, volumetric light, selective transition accents, impact motion, and editable kinetic typography.
+
+Reproduce and verify the v1.1 benchmark:
+
+```bash
+npm install
+npm run validate
+npm run render:aurora
+npm run qa:temporal
+```
+
+`npm run validate` now includes the governed brief/storyboard and SHA-256 asset checks, deterministic motion tests, and strict TypeScript verification. The v1.1 MP4 is written to `commercials/aurora-cold-brew/output/aurora-cold-brew-v1-1.mp4` and remains untracked. See `docs/MOTION_ARCHITECTURE_V1_1.md` and `docs/AURORA_V1_1_VALIDATION.md`.
+
 This repository is an experimental AI commercial production lab and is not affiliated with any third-party brand unless explicitly stated.
