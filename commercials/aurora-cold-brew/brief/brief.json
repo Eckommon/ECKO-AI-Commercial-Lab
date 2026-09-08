@@ -1,0 +1,20 @@
+{
+  "campaignId": "ACB-001",
+  "product": "AURORA Cold Brew Coffee (fictional benchmark brand)",
+  "durationSec": 40,
+  "format": "vertical",
+  "resolution": "1080x1920",
+  "fps": 30,
+  "audience": "design-conscious adults who want a premium ready-to-drink coffee cue",
+  "creativeGoal": "Make cold brew feel like a controlled burst of nocturnal energy rather than a generic caffeine product.",
+  "campaignLine": "AWAKEN THE COLD.",
+  "supportCopy": ["COLD.", "BOLD. SMOOTH. READY."],
+  "visualLanguage": ["black", "emerald aurora", "condensation", "ice", "coffee beans", "restrained gold typography"],
+  "claims": [],
+  "constraints": [
+    "Fictional brand benchmark only",
+    "No health, performance or comparative product claims",
+    "Vertical short-form delivery",
+    "Typography remains editable in code"
+  ]
+}
