@@ -3,3 +3,4 @@ node_modules/
 *.log
 commercials/*/output/*.mp4
 commercials/*/audio/*.wav
+public/commercials/
