@@ -1,12 +1,8 @@
+import brief from '../../../commercials/aurora-cold-brew/brief/brief.json';
 import storyboard from '../../../commercials/aurora-cold-brew/storyboard/storyboard.json';
+import {deriveAuroraContract} from './contract';
 
-export const AURORA_CONTRACT = {
-  campaignId: 'ACB-001',
-  durationSec: 40,
-  fps: 30,
-  width: 1080,
-  height: 1920,
-} as const;
+export const AURORA_CONTRACT = deriveAuroraContract(brief);
 
 export const sec = (seconds: number) => Math.round(seconds * AURORA_CONTRACT.fps);
 

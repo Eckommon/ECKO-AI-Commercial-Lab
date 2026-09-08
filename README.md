@@ -1,6 +1,6 @@
 # ECKO AI Commercial Lab
 
-> **AI Commercial Factory v1.0** — GPT-directed storyboards, generated visual assets, code-driven motion, and reproducible MP4 rendering.
+> **AI Commercial Factory v1.0** — GPT-directed storyboards, generated visual assets, code-driven motion, and a reproducible rendering procedure.
 
 ECKO AI Commercial Lab is an experiment in building short-form commercial production as a reproducible software pipeline rather than a one-off editing workflow.
 
@@ -73,13 +73,6 @@ npm run studio
 npm run render:aurora
 ```
 
-FFmpeg fallback:
-
-```bash
-python scripts/generate_aurora_audio.py
-bash scripts/render_aurora_ffmpeg.sh
-```
-
 ## Design principles
 
 - **Reproducible over ad-hoc**
@@ -95,7 +88,7 @@ bash scripts/render_aurora_ffmpeg.sh
 
 ## Factory v1.1 motion benchmark
 
-The Issue #2 upgrade preserves the v1.0 campaign contract and adds a governed scene-recipe timeline, deterministic cinematic camera curves, artifact-safe procedural depth, atmospheric particles, volumetric light, selective transition accents, impact motion, and editable kinetic typography.
+The Issue #2 upgrade preserves the v1.0 campaign contract and adds a governed scene-recipe timeline, deterministic motion primitives and procedural systems, artifact-safe depth, atmospheric particles, volumetric light, selective transition accents, impact motion, and editable kinetic typography.
 
 Reproduce and verify the v1.1 benchmark:
 
@@ -107,5 +100,7 @@ npm run qa:temporal
 ```
 
 `npm run validate` now includes the governed brief/storyboard and SHA-256 asset checks, deterministic motion tests, and strict TypeScript verification. The v1.1 MP4 is written to `commercials/aurora-cold-brew/output/aurora-cold-brew-v1-1.mp4` and remains untracked. See `docs/MOTION_ARCHITECTURE_V1_1.md` and `docs/AURORA_V1_1_VALIDATION.md`.
+
+On a fresh clone, `npm run render:aurora` creates the required v1.1 MP4 and `npm run qa:temporal` creates after-only evidence under `commercials/aurora-cold-brew/output/qa/after-only/`. The QA command prints that baseline comparison was skipped when the ignored `aurora-cold-brew-v1.mp4` is unavailable. If that valid v1.0 baseline is present beside the v1.1 render, the same command instead creates full comparison evidence under `commercials/aurora-cold-brew/output/qa/before-after/`. If the required v1.1 render is absent, the command fails and instructs the user to run `npm run render:aurora` first. Generated MP4 and QA artifacts remain untracked.
 
 This repository is an experimental AI commercial production lab and is not affiliated with any third-party brand unless explicitly stated.

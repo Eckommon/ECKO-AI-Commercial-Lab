@@ -1,7 +1,7 @@
 # AURORA Benchmark #001 — Factory v1.1 Validation
 
-Date: 2026-09-08  
-Branch: `factory/v1.1-motion-quality-upgrade`  
+Date: 2026-09-08
+Branch: `factory/v1.1-motion-quality-upgrade`
 Campaign: `ACB-001`
 
 ## Result
@@ -21,7 +21,9 @@ The continuous-playback portion of manual QA could not be completed inside the a
 - Supporting copy: `COLD.` and `BOLD. SMOOTH. READY.`
 - Claims added by v1.1: none
 
-Storyboard purposes, assets, copy, and timings are checked against literal governed values by `scripts/validate.mjs`. Motion prose and optional `sfx` cue names were updated; semantic and timing fields were not changed.
+Storyboard purposes, assets, copy, timings, and the presence/name of every `sfx` cue are checked against literal governed values by `scripts/validate.mjs`. Cue frames used by the audio generator and runtime remain derived from the governed storyboard; no independent cue timestamps are maintained.
+
+The runtime composition contract derives campaign ID, duration, frame rate, width, and height from `brief.json`; the resolution parser rejects malformed, non-positive, non-finite, or unsafe dimensions. The validator independently retains the literal accepted ACB-001 / 40-second / 30-fps / 1080x1920 contract, so governed-source drift fails before the render command proceeds.
 
 ## Baseline assessment
 
@@ -34,6 +36,12 @@ The existing v1 MP4 reports 1080x1920 H.264 video at 30 fps, exactly 1200 video 
 Final ignored artifact:
 
 `commercials/aurora-cold-brew/output/aurora-cold-brew-v1-1.mp4`
+
+Artifact SHA-256 from the corrected render:
+
+`348B48BDE74180B764EE44297872FE17C3EB53A487108F8A0F9FCBD251AE04ED`
+
+This hash identifies the verified local artifact from this run. It is not a claim that all future encoded MP4s will be byte-identical.
 
 `ffprobe` reports:
 
@@ -63,7 +71,7 @@ The governed source WAV reports PCM signed 16-bit little-endian, mono, 48 kHz, a
 
 ## Temporal QA
 
-`npm run qa:temporal` writes ignored before/after evidence under `commercials/aurora-cold-brew/output/qa/`.
+`npm run qa:temporal` requires the ignored v1.1 MP4. When the ignored v1.0 baseline is also present, it writes full comparison evidence under `commercials/aurora-cold-brew/output/qa/before-after/`. On a fresh clone without that baseline, it reports that comparison was skipped, exits successfully after processing v1.1, and writes unambiguous after-only evidence under `commercials/aurora-cold-brew/output/qa/after-only/`. If v1.1 is absent, it fails with an instruction to run `npm run render:aurora` first.
 
 | Evidence | Frames | Inspection result |
 |---|---:|---|
@@ -122,7 +130,7 @@ ffmpeg -hide_banner -nostats -i commercials/aurora-cold-brew/output/aurora-cold-
 Get-ChildItem -Path .\commercials\aurora-cold-brew\assets\*.png | Get-FileHash -Algorithm SHA256
 ```
 
-`npm run render:aurora` itself executed `npm run prepare:aurora`, which regenerated the deterministic audio, synchronized public assets, and ran the complete validator before Remotion rendered.
+`npm run render:aurora` itself executed `npm run prepare:aurora`, which regenerated the deterministic procedural audio, synchronized public assets, and ran the complete validator before Remotion rendered. The procedure is reproducible, but a single recorded MP4 hash is artifact evidence rather than proof that future encoder runs will be byte-identical.
 
 ## Remaining production limitations
 
@@ -136,4 +144,4 @@ Get-ChildItem -Path .\commercials\aurora-cold-brew\assets\*.png | Get-FileHash -
 
 ## Acceptance status
 
-All machine-verifiable Issue #2 criteria are satisfied: validation, strict TypeScript, exact visual duration/frame count/dimensions/rate, nine governed beats, reusable components, deterministic render, local MP4, documentation, temporal evidence, and clean artifact policy. The continuous full-speed audiovisual viewing criterion remains pending Human playback because the execution environment exposed no usable media surface. Therefore the complete Issue #2 acceptance set is not claimed as fully satisfied.
+All machine-verifiable Issue #2 criteria are satisfied: validation, strict TypeScript, exact visual duration/frame count/dimensions/rate, nine governed beats, reusable deterministic motion primitives and procedural systems, a reproducible rendering procedure, local MP4, documentation, temporal evidence, and clean artifact policy. The continuous full-speed audiovisual viewing criterion remains pending Human playback because the execution environment exposed no usable media surface. Therefore the complete Issue #2 acceptance set is not claimed as fully satisfied.
