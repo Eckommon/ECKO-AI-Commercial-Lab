@@ -66,6 +66,12 @@ Storyboard:
 
 ## Quick start
 
+On `benchmark/001-astra`, install the local score/QA dependencies once:
+
+```powershell
+python -m pip install -r scripts/requirements-astra.txt
+```
+
 ```bash
 npm install
 npm run validate
@@ -73,12 +79,26 @@ npm run studio
 npm run render:aurora
 ```
 
-FFmpeg fallback:
+Independent Astra benchmark delivery and QA:
 
-```bash
-python scripts/generate_aurora_audio.py
-bash scripts/render_aurora_ffmpeg.sh
+```powershell
+npm run render:aurora
+python scripts/qa_astra.py artifacts/astra-001/aurora-astra.mp4 --label final
 ```
+
+The render command generates the original stereo score, synchronizes the five
+canonical images, runs contract tests and TypeScript validation, checks prepared
+bytes, then renders H.264 / BT.709 / 1080x1920 / 30 fps / 1200 frames. The MP4 is
+`artifacts/astra-001/aurora-astra.mp4`. `npm run preview:aurora` makes a half-size
+preview. FFmpeg and ffprobe must be on PATH for QA. Georgia/Arial are resolved
+from Windows system fonts; exact cross-platform typography is not promised.
+
+See [independent design](docs/ASTRA_DESIGN.md),
+[benchmark evidence](docs/ASTRA_FINAL_REPORT.md), and
+[human interventions](docs/ASTRA_HUMAN_INTERVENTION_LOG.md).
+Existing commercial output/QA is excluded from this benchmark. The originally
+documented shell-based FFmpeg fallback is absent from the starting repository;
+use the validated Remotion pipeline above.
 
 ## Design principles
 

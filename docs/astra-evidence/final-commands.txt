@@ -1,0 +1,5 @@
+ffprobe -v error -count_frames -show_streams -show_format -of json artifacts\astra-001\aurora-astra.mp4
+ffmpeg -hide_banner -v error -xerror -i artifacts\astra-001\aurora-astra.mp4 -map 0:v:0 -map 0:a:0 -f null -
+ffmpeg -hide_banner -v error -i artifacts\astra-001\aurora-astra.mp4 -map 0:v:0 -vf scale=216:384 -pix_fmt rgb24 -f rawvideo -
+ffmpeg -hide_banner -v error -y -i artifacts\astra-001\aurora-astra.mp4 -vf select=eq(n\,60)+eq(n\,150)+eq(n\,255)+eq(n\,400)+eq(n\,490)+eq(n\,525)+eq(n\,720)+eq(n\,870)+eq(n\,1035)+eq(n\,1140)+eq(n\,1199) -fps_mode vfr C:\ECKO-AI-Commercial-Lab\artifacts\astra-001\final\detail-%02d.png
+ffmpeg -hide_banner -v info -i artifacts\astra-001\aurora-astra.mp4 -map 0:a:0 -af ebur128=peak=true -f null -

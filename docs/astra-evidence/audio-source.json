@@ -1,0 +1,101 @@
+{
+  "sampleRate": 48000,
+  "samples": 1920000,
+  "channels": 2,
+  "duration": 40,
+  "peakDbFS": -1.4999999999999996,
+  "rmsDbFS": -21.765543087784,
+  "sha256": "e791e1f494357192d9ea57c2fbecd9693b64a06244295cebe473355934e4e939",
+  "cues": [
+    {
+      "shot": "S01",
+      "frame": 0,
+      "sample": 0
+    },
+    {
+      "shot": "S01",
+      "frame": 56,
+      "sample": 89600
+    },
+    {
+      "shot": "S02",
+      "frame": 90,
+      "sample": 144000
+    },
+    {
+      "shot": "S02",
+      "frame": 150,
+      "sample": 240000
+    },
+    {
+      "shot": "S03",
+      "frame": 210,
+      "sample": 336000
+    },
+    {
+      "shot": "S04",
+      "frame": 330,
+      "sample": 528000
+    },
+    {
+      "shot": "S04",
+      "frame": 442,
+      "sample": 707200
+    },
+    {
+      "shot": "S05",
+      "frame": 480,
+      "sample": 768000
+    },
+    {
+      "shot": "S05",
+      "frame": 516,
+      "sample": 825600
+    },
+    {
+      "shot": "S05",
+      "frame": 540,
+      "sample": 864000
+    },
+    {
+      "shot": "S05",
+      "frame": 570,
+      "sample": 912000
+    },
+    {
+      "shot": "S06",
+      "frame": 630,
+      "sample": 1008000
+    },
+    {
+      "shot": "S07",
+      "frame": 810,
+      "sample": 1296000
+    },
+    {
+      "shot": "S07",
+      "frame": 885,
+      "sample": 1416000
+    },
+    {
+      "shot": "S08",
+      "frame": 960,
+      "sample": 1536000
+    },
+    {
+      "shot": "S08",
+      "frame": 984,
+      "sample": 1574400
+    },
+    {
+      "shot": "S08",
+      "frame": 1008,
+      "sample": 1612800
+    },
+    {
+      "shot": "S09",
+      "frame": 1080,
+      "sample": 1728000
+    }
+  ]
+}

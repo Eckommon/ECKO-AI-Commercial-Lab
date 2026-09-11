@@ -1,15 +1,378 @@
 {
   "campaignId": "ACB-001",
   "durationSec": 40,
+  "direction": "Light under pressure",
   "shots": [
-    {"id":"S01","startSec":0,"endSec":3,"purpose":"cold open and curiosity","asset":"shot-01-hero.png","motion":"slow push-in from black with atmospheric vignette","copy":""},
-    {"id":"S02","startSec":3,"endSec":7,"purpose":"premium tactile detail","asset":"shot-02-macro.png","motion":"macro diagonal drift with scale increase","copy":""},
-    {"id":"S03","startSec":7,"endSec":11,"purpose":"name the sensation","asset":"shot-03-portrait.png","motion":"slow vertical pan with hard text reveal","copy":"COLD."},
-    {"id":"S04","startSec":11,"endSec":16,"purpose":"establish aurora signature","asset":"shot-01-hero.png","motion":"reverse push with luminous scan overlay","copy":""},
-    {"id":"S05","startSec":16,"endSec":21,"purpose":"energy peak","asset":"shot-04-impact.png","motion":"impact zoom, micro shake and quick settle","copy":""},
-    {"id":"S06","startSec":21,"endSec":27,"purpose":"hero product recognition","asset":"shot-05-endcard.png","motion":"centered slow push-in","copy":"AURORA"},
-    {"id":"S07","startSec":27,"endSec":32,"purpose":"premium breathing room","asset":"shot-02-macro.png","motion":"slow digital orbit simulation via x/scale drift","copy":""},
-    {"id":"S08","startSec":32,"endSec":36,"purpose":"product character","asset":"shot-04-impact.png","motion":"subtle pullback under kinetic text","copy":"BOLD. SMOOTH. READY."},
-    {"id":"S09","startSec":36,"endSec":40,"purpose":"brand memory and close","asset":"shot-05-endcard.png","motion":"locked hero with glow pulse and fade to black","copy":"AWAKEN THE COLD."}
+    {
+      "id": "S01",
+      "startSec": 0,
+      "endSec": 3,
+      "purpose": "cold open and curiosity",
+      "asset": "shot-01-hero.png",
+      "motion": "emerald slit opens onto isolated can; slow optical approach",
+      "copy": "",
+      "scene": "reveal",
+      "camera": [
+        [
+          0,
+          1.1,
+          0,
+          150,
+          0
+        ],
+        [
+          89,
+          1.17,
+          0,
+          130,
+          0
+        ]
+      ],
+      "revealFrames": 42,
+      "exitFrames": 8,
+      "cues": [
+        0,
+        56
+      ],
+      "transition": "shutter"
+    },
+    {
+      "id": "S02",
+      "startSec": 3,
+      "endSec": 7,
+      "purpose": "premium tactile detail",
+      "asset": "shot-02-macro.png",
+      "motion": "magnified ice surface traverses optical aperture; restrained depth drift",
+      "copy": "",
+      "scene": "detail",
+      "camera": [
+        [
+          0,
+          1.18,
+          28,
+          0,
+          -4
+        ],
+        [
+          119,
+          1.05,
+          -25,
+          -30,
+          2
+        ]
+      ],
+      "revealFrames": 14,
+      "exitFrames": 8,
+      "cues": [
+        0,
+        60
+      ],
+      "transition": "iris"
+    },
+    {
+      "id": "S03",
+      "startSec": 7,
+      "endSec": 11,
+      "purpose": "name the sensation",
+      "asset": "shot-03-portrait.png",
+      "motion": "large COLD. cuts in; portrait lifts into a sustained hold",
+      "copy": "COLD.",
+      "scene": "cold",
+      "camera": [
+        [
+          0,
+          0.94,
+          -138,
+          195,
+          -3
+        ],
+        [
+          24,
+          0.98,
+          -138,
+          155,
+          0
+        ],
+        [
+          119,
+          1.01,
+          -138,
+          145,
+          0
+        ]
+      ],
+      "revealFrames": 12,
+      "exitFrames": 8,
+      "cues": [
+        0
+      ],
+      "typeFrames": [
+        0
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "S04",
+      "startSec": 11,
+      "endSec": 16,
+      "purpose": "establish aurora signature",
+      "asset": "shot-01-hero.png",
+      "motion": "aurora fans outward behind isolated can; one light traversal then anticipation",
+      "copy": "",
+      "scene": "scan",
+      "camera": [
+        [
+          0,
+          1.16,
+          0,
+          100,
+          0
+        ],
+        [
+          110,
+          1.02,
+          0,
+          140,
+          0
+        ],
+        [
+          149,
+          1.08,
+          0,
+          120,
+          0
+        ]
+      ],
+      "revealFrames": 18,
+      "exitFrames": 10,
+      "cues": [
+        0,
+        112
+      ],
+      "scanFrames": [
+        12,
+        115
+      ],
+      "transition": "dissolve"
+    },
+    {
+      "id": "S05",
+      "startSec": 16,
+      "endSec": 21,
+      "purpose": "energy peak",
+      "asset": "shot-04-impact.png",
+      "secondaryAsset": "shot-02-macro.png",
+      "motion": "condensation snap opens into layered coffee-and-ice eruption at frames 24-48; independent packshot settles while the environment expands",
+      "copy": "",
+      "scene": "impact",
+      "camera": [
+        [
+          0,
+          1.55,
+          0,
+          0,
+          -7
+        ],
+        [
+          14,
+          1.03,
+          0,
+          0,
+          1
+        ],
+        [
+          70,
+          1.08,
+          -18,
+          -10,
+          0
+        ],
+        [
+          149,
+          1.13,
+          -30,
+          -20,
+          0
+        ]
+      ],
+      "revealFrames": 0,
+      "exitFrames": 12,
+      "cues": [
+        0,
+        36,
+        60,
+        90
+      ],
+      "burstFrames": 36,
+      "impactSwitchFrames": [
+        24,
+        48
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "S06",
+      "startSec": 21,
+      "endSec": 27,
+      "purpose": "hero product recognition",
+      "asset": "shot-05-endcard.png",
+      "motion": "isolated hero settles above elliptical light; brand holds for remainder of beat",
+      "copy": "AURORA",
+      "scene": "hero",
+      "camera": [
+        [
+          0,
+          1.22,
+          0,
+          30,
+          2
+        ],
+        [
+          30,
+          1.14,
+          0,
+          30,
+          0
+        ],
+        [
+          179,
+          1.17,
+          0,
+          20,
+          0
+        ]
+      ],
+      "revealFrames": 20,
+      "exitFrames": 12,
+      "cues": [
+        0
+      ],
+      "typeFrames": [
+        12
+      ],
+      "transition": "dissolve"
+    },
+    {
+      "id": "S07",
+      "startSec": 27,
+      "endSec": 32,
+      "purpose": "premium breathing room",
+      "asset": "shot-02-macro.png",
+      "motion": "elliptical optical window passes over ice with a slow orbital camera path",
+      "copy": "",
+      "scene": "orbit",
+      "camera": [
+        [
+          0,
+          1.04,
+          -20,
+          20,
+          -3
+        ],
+        [
+          75,
+          1.1,
+          22,
+          -20,
+          0
+        ],
+        [
+          149,
+          1.04,
+          -20,
+          20,
+          3
+        ]
+      ],
+      "revealFrames": 20,
+      "exitFrames": 10,
+      "cues": [
+        0,
+        75
+      ],
+      "transition": "iris"
+    },
+    {
+      "id": "S08",
+      "startSec": 32,
+      "endSec": 36,
+      "purpose": "product character",
+      "asset": "shot-04-impact.png",
+      "motion": "BOLD. SMOOTH. READY. enters on three score accents over restrained macro; all words hold",
+      "copy": "BOLD. SMOOTH. READY.",
+      "scene": "character",
+      "camera": [
+        [
+          0,
+          1.12,
+          0,
+          0,
+          0
+        ],
+        [
+          119,
+          1.03,
+          0,
+          -20,
+          0
+        ]
+      ],
+      "revealFrames": 10,
+      "exitFrames": 8,
+      "cues": [
+        0,
+        24,
+        48
+      ],
+      "typeFrames": [
+        0,
+        24,
+        48
+      ],
+      "transition": "cut"
+    },
+    {
+      "id": "S09",
+      "startSec": 36,
+      "endSec": 40,
+      "purpose": "brand memory and close",
+      "asset": "shot-05-endcard.png",
+      "motion": "editable campaign line over isolated product; 3-second reading hold then 8-frame fade",
+      "copy": "AWAKEN THE COLD.",
+      "scene": "close",
+      "camera": [
+        [
+          0,
+          1.02,
+          0,
+          100,
+          0
+        ],
+        [
+          24,
+          1.04,
+          0,
+          80,
+          0
+        ],
+        [
+          119,
+          1.04,
+          0,
+          80,
+          0
+        ]
+      ],
+      "revealFrames": 12,
+      "exitFrames": 8,
+      "cues": [
+        0
+      ],
+      "typeFrames": [
+        0,
+        8
+      ],
+      "transition": "dissolve"
+    }
   ]
 }
