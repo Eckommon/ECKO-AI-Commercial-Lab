@@ -4,20 +4,24 @@
   "private": true,
   "description": "AI-native commercial production lab: GPT-directed storyboards, generated visual assets, code-driven motion, and reproducible MP4 rendering.",
   "scripts": {
-    "audio:aurora": "python scripts/generate_aurora_audio.py",
-    "assets:aurora": "node scripts/sync_aurora_assets.mjs",
-    "prepare:aurora": "npm run audio:aurora && npm run assets:aurora && npm run validate",
+    "audio:aurora": "python scripts/generate_astra_audio.py",
+    "assets:aurora": "node scripts/prepare_astra.mjs",
+    "prepare:aurora": "npm run audio:aurora && npm run assets:aurora && npm run validate && node scripts/validate.mjs --prepared",
     "studio": "remotion studio src/index.ts",
-    "render:aurora": "npm run prepare:aurora && remotion render src/index.ts AuroraColdBrew commercials/aurora-cold-brew/output/aurora-cold-brew-v1.mp4 --codec=h264 --crf=18",
-    "validate": "node scripts/validate.mjs"
+    "render:aurora": "npm run prepare:aurora && remotion render src/index.ts AuroraColdBrew artifacts/astra-001/aurora-astra-master.mp4 --codec=h264 --crf=18 --image-format=png --color-space=bt709 --pixel-format=yuv420p --concurrency=4 --log=error && node scripts/finalize_astra.mjs",
+    "preview:aurora": "npm run prepare:aurora && remotion render src/index.ts AuroraColdBrew artifacts/astra-001/preview.mp4 --codec=h264 --crf=20 --image-format=png --color-space=bt709 --pixel-format=yuv420p --scale=0.5 --concurrency=4 --log=error",
+    "test": "node --test scripts/test_astra_contract.mjs",
+    "validate": "node scripts/validate.mjs && npm test && tsc --noEmit"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.365",
-    "remotion": "^4.0.365",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "remotion": "^4.0.365"
   },
   "devDependencies": {
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.7",
     "typescript": "^5.9.2"
   }
 }

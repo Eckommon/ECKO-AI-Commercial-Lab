@@ -1,0 +1,65 @@
+{
+  "file": "C:\\ECKO-AI-Commercial-Lab\\artifacts\\astra-001\\baseline.mp4",
+  "video": {
+    "codec_name": "h264",
+    "profile": "High",
+    "width": 1080,
+    "height": 1920,
+    "pix_fmt": "yuvj420p",
+    "r_frame_rate": "30/1",
+    "avg_frame_rate": "30/1",
+    "nb_frames": "1200",
+    "nb_read_frames": "1200",
+    "duration": "40.000000",
+    "color_range": "pc",
+    "color_space": "bt470bg",
+    "color_transfer": null,
+    "color_primaries": null
+  },
+  "audio": {
+    "codec_name": "aac",
+    "sample_rate": "48000",
+    "channels": 2,
+    "duration": "40.042667"
+  },
+  "containerDuration": "40.042667",
+  "bytes": 51371738,
+  "sha256": "c932865cc9940770344eb5b438a095c348e11a18172a08a5b79a2b769df6eba7",
+  "fullDecode": "PASS",
+  "sampledFramesForMetrics": 1200,
+  "blackFrameCandidates": [],
+  "meanPixelDifference": 1.796810507774353,
+  "maxPixelDifference": 56.507957458496094,
+  "identicalAdjacentFrames": [],
+  "perBeatMeanPixelDifference": [
+    1.1277046203613281,
+    3.499108076095581,
+    0.6012009978294373,
+    1.2153486013412476,
+    2.1490252017974854,
+    0.5965566635131836,
+    2.900508403778076,
+    0.866759181022644,
+    0.601170003414154
+  ],
+  "detailFrameIndices": [
+    60,
+    150,
+    255,
+    400,
+    490,
+    525,
+    720,
+    870,
+    1035,
+    1140,
+    1199
+  ],
+  "commands": [
+    "ffprobe -v error -count_frames -show_streams -show_format -of json artifacts\\astra-001\\baseline.mp4",
+    "ffmpeg -hide_banner -v error -xerror -i artifacts\\astra-001\\baseline.mp4 -map 0:v:0 -map 0:a:0 -f null -",
+    "ffmpeg -hide_banner -v error -i artifacts\\astra-001\\baseline.mp4 -map 0:v:0 -vf scale=216:384 -pix_fmt rgb24 -f rawvideo -",
+    "ffmpeg -hide_banner -v error -y -i artifacts\\astra-001\\baseline.mp4 -vf select=eq(n\\,60)+eq(n\\,150)+eq(n\\,255)+eq(n\\,400)+eq(n\\,490)+eq(n\\,525)+eq(n\\,720)+eq(n\\,870)+eq(n\\,1035)+eq(n\\,1140)+eq(n\\,1199) -fps_mode vfr C:\\ECKO-AI-Commercial-Lab\\artifacts\\astra-001\\baseline\\detail-%02d.png",
+    "ffmpeg -hide_banner -v info -i artifacts\\astra-001\\baseline.mp4 -map 0:a:0 -af ebur128=peak=true -f null -"
+  ]
+}

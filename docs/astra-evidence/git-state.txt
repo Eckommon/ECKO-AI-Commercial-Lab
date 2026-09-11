@@ -1,0 +1,103 @@
+Final repository snapshot. Pre-existing commercials/aurora-cold-brew/output/ is preserved and not inspected.
+
+$ git branch --show-current
+benchmark/001-astra
+
+$ git rev-parse HEAD
+4869f931b195158a54d8822cd9755644717d83b0
+
+$ git status --short
+ M README.md
+ M commercials/aurora-cold-brew/storyboard/storyboard.json
+ M docs/ASTRA_HUMAN_INTERVENTION_LOG.md
+ M package-lock.json
+ M package.json
+ M scripts/validate.mjs
+ M src/Root.tsx
+ M src/commercials/aurora/AuroraCommercial.tsx
+ M tsconfig.json
+?? artifacts/
+?? commercials/aurora-cold-brew/output/
+?? docs/ASTRA_COMMANDS.md
+?? docs/ASTRA_DESIGN.md
+?? docs/ASTRA_FINAL_REPORT.md
+?? docs/astra-evidence/
+?? scripts/astra_contract.mjs
+?? scripts/finalize_astra.mjs
+?? scripts/generate_astra_audio.py
+?? scripts/package_astra_evidence.py
+?? scripts/prepare_astra.mjs
+?? scripts/qa_astra.py
+?? scripts/requirements-astra.txt
+?? scripts/snapshot_astra.mjs
+?? scripts/test_astra_contract.mjs
+?? src/commercials/aurora/direction.ts
+?? src/commercials/aurora/scenes/
+?? src/components/AuroraField.tsx
+?? src/components/EditorialType.tsx
+?? src/components/OpticalStage.tsx
+?? src/components/SourceSurface.tsx
+
+$ git diff --check
+(no output)
+
+$ git diff --stat
+ README.md                                          |  28 +-
+ .../aurora-cold-brew/storyboard/storyboard.json    | 381 ++++++++++++++++++++-
+ docs/ASTRA_HUMAN_INTERVENTION_LOG.md               |  17 +-
+ package-lock.json                                  |  29 ++
+ package.json                                       |  18 +-
+ scripts/validate.mjs                               |  42 +--
+ src/Root.tsx                                       |   9 +-
+ src/commercials/aurora/AuroraCommercial.tsx        | 119 +------
+ tsconfig.json                                      |   1 +
+ 9 files changed, 482 insertions(+), 162 deletions(-)
+
+$ git diff --numstat
+24	4	README.md
+372	9	commercials/aurora-cold-brew/storyboard/storyboard.json
+10	7	docs/ASTRA_HUMAN_INTERVENTION_LOG.md
+29	0	package-lock.json
+11	7	package.json
+17	25	scripts/validate.mjs
+5	4	src/Root.tsx
+13	106	src/commercials/aurora/AuroraCommercial.tsx
+1	0	tsconfig.json
+
+$ git ls-files --others --exclude-standard -- README.md artifacts/.gitignore docs scripts src package.json package-lock.json tsconfig.json
+artifacts/.gitignore
+docs/ASTRA_COMMANDS.md
+docs/ASTRA_DESIGN.md
+docs/ASTRA_FINAL_REPORT.md
+docs/astra-evidence/audio-source.json
+docs/astra-evidence/baseline-commands.txt
+docs/astra-evidence/baseline-decode.txt
+docs/astra-evidence/baseline-ffprobe.json
+docs/astra-evidence/baseline-media-report.json
+docs/astra-evidence/baseline-overview-1fps.jpg
+docs/astra-evidence/baseline-transitions.jpg
+docs/astra-evidence/final-commands.txt
+docs/astra-evidence/final-decode.txt
+docs/astra-evidence/final-ffprobe.json
+docs/astra-evidence/final-media-report.json
+docs/astra-evidence/final-overview-1fps.jpg
+docs/astra-evidence/final-transitions.jpg
+docs/astra-evidence/git-state.txt
+docs/astra-evidence/validation.txt
+scripts/astra_contract.mjs
+scripts/finalize_astra.mjs
+scripts/generate_astra_audio.py
+scripts/package_astra_evidence.py
+scripts/prepare_astra.mjs
+scripts/qa_astra.py
+scripts/requirements-astra.txt
+scripts/snapshot_astra.mjs
+scripts/test_astra_contract.mjs
+src/commercials/aurora/direction.ts
+src/commercials/aurora/scenes/DetailScenes.tsx
+src/commercials/aurora/scenes/ImpactScenes.tsx
+src/commercials/aurora/scenes/ProductScenes.tsx
+src/components/AuroraField.tsx
+src/components/EditorialType.tsx
+src/components/OpticalStage.tsx
+src/components/SourceSurface.tsx
