@@ -2,14 +2,19 @@
   "name": "ecko-ai-commercial-lab",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "AI-native commercial production lab: GPT-directed storyboards, generated visual assets, code-driven motion, and reproducible MP4 rendering.",
   "scripts": {
     "audio:aurora": "python scripts/generate_aurora_audio.py",
     "assets:aurora": "node scripts/sync_aurora_assets.mjs",
     "prepare:aurora": "npm run audio:aurora && npm run assets:aurora && npm run validate",
+    "qa:temporal": "node scripts/temporal_qa.mjs",
     "studio": "remotion studio src/index.ts",
-    "render:aurora": "npm run prepare:aurora && remotion render src/index.ts AuroraColdBrew commercials/aurora-cold-brew/output/aurora-cold-brew-v1.mp4 --codec=h264 --crf=18",
-    "validate": "node scripts/validate.mjs"
+    "render:aurora": "npm run prepare:aurora && remotion render src/index.ts AuroraColdBrew commercials/aurora-cold-brew/output/aurora-cold-brew-v1-1.mp4 --codec=h264 --crf=18",
+    "typecheck": "tsc --noEmit",
+    "test:motion": "node scripts/test-motion-math.mjs && node scripts/test-reproducibility.mjs",
+    "validate:contract": "node scripts/validate.mjs",
+    "validate": "npm run validate:contract && npm run test:motion && npm run typecheck"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.365",
@@ -18,6 +23,8 @@
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
+    "@types/react": "^19.1.1",
+    "@types/react-dom": "^19.1.1",
     "typescript": "^5.9.2"
   }
 }

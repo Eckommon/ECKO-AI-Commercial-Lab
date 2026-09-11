@@ -2,5 +2,6 @@ node_modules/
 .DS_Store
 *.log
 commercials/*/output/*.mp4
+commercials/*/output/qa/
 commercials/*/audio/*.wav
 public/commercials/
