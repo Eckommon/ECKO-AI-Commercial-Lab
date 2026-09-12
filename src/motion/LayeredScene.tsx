@@ -1,24 +1,28 @@
 import React from 'react';
-import {AbsoluteFill, Img, staticFile, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import type {DepthRecipe} from '../commercials/aurora/timeline';
+import {SourceSurface, type SourceSurfaceLayout} from '../factory/SourceSurface';
+import type {SourceSurfacePolicy} from '../factory/source-surface';
 import {depthOffset, smoothstep} from './math';
 
 type Props = {
   src: string;
   durationFrames: number;
   depth: DepthRecipe;
+  surface: SourceSurfacePolicy;
+  layout: SourceSurfaceLayout;
+  objectPosition: string;
 };
 
-export const LayeredScene: React.FC<Props> = ({src, durationFrames, depth}) => {
+export const LayeredScene: React.FC<Props> = ({src, durationFrames, depth, surface, layout, objectPosition}) => {
   const frame = useCurrentFrame();
   const progress = smoothstep(frame / Math.max(1, durationFrames - 1));
   const backgroundTravel = depthOffset(progress, depth.amount, -9);
   const foregroundTravel = depthOffset(progress, depth.amount, 11);
-  const source = staticFile(src);
 
   return (
     <AbsoluteFill style={{backgroundColor: '#020706', overflow: 'hidden'}}>
-      <Img src={source} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+      <SourceSurface src={src} policy={surface} layout={layout} objectPosition={objectPosition} />
 
       {depth.amount > 0 ? (
         <>

@@ -38,7 +38,7 @@ const fixtureRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'aurora-temporal-qa-')
 try {
   const output = path.join(fixtureRoot, 'commercials/aurora-cold-brew/output');
   fs.mkdirSync(output, {recursive: true});
-  const after = path.join(output, 'aurora-cold-brew-v1-1.mp4');
+  const after = path.join(output, 'aurora-cold-brew-v1-2.mp4');
   fs.writeFileSync(after, 'after');
 
   const messages = [];
@@ -53,25 +53,28 @@ try {
     return options.encoding ? '' : Buffer.alloc(0);
   };
 
-  const afterOnly = runTemporalQa({root: fixtureRoot, execute, log: (message) => messages.push(message)});
+  const capture = () => 'metric evidence';
+  const afterOnly = runTemporalQa({root: fixtureRoot, execute, capture, log: (message) => messages.push(message)});
   assert.equal(afterOnly.mode, 'after-only');
   assert.ok(messages.some((message) => message.includes('baseline comparison skipped')));
   assert.ok(executedInputs.every((input) => input === after));
   assert.ok(fs.existsSync(path.join(output, 'qa/after-only/after-full-1fps.png')));
+  assert.ok(fs.existsSync(path.join(output, 'qa/after-only/after-type-completion-holds.png')));
+  assert.ok(fs.existsSync(path.join(output, 'qa/after-only/after-frame-metrics.txt')));
 
   executedInputs.length = 0;
   fs.writeFileSync(path.join(output, 'aurora-cold-brew-v1.mp4'), 'before');
-  const comparison = runTemporalQa({root: fixtureRoot, execute, log: () => {}});
+  const comparison = runTemporalQa({root: fixtureRoot, execute, capture, log: () => {}});
   assert.equal(comparison.mode, 'before-after');
   assert.ok(executedInputs.some((input) => input.endsWith('aurora-cold-brew-v1.mp4')));
-  assert.ok(executedInputs.some((input) => input.endsWith('aurora-cold-brew-v1-1.mp4')));
+  assert.ok(executedInputs.some((input) => input.endsWith('aurora-cold-brew-v1-2.mp4')));
   assert.ok(fs.existsSync(path.join(output, 'qa/before-after/before-full-1fps.png')));
   assert.ok(fs.existsSync(path.join(output, 'qa/before-after/after-full-1fps.png')));
 
   fs.rmSync(after);
   assert.throws(
-    () => runTemporalQa({root: fixtureRoot, execute, log: () => {}}),
-    /Missing required v1\.1 QA input.*npm run render:aurora/,
+    () => runTemporalQa({root: fixtureRoot, execute, capture, log: () => {}}),
+    /Missing required v1\.2 QA input.*npm run render:aurora/,
   );
 } finally {
   fs.rmSync(fixtureRoot, {recursive: true, force: true});
@@ -86,7 +89,9 @@ try {
   for (const relativePath of [
     'commercials/aurora-cold-brew/brief/brief.json',
     'commercials/aurora-cold-brew/storyboard/storyboard.json',
+    'commercials/aurora-cold-brew/design/creative-direction.v1.2.json',
     'commercials/aurora-cold-brew/assets',
+    'factory/creative_direction.schema.json',
     'src/commercials/aurora/timeline.ts',
   ]) {
     const source = path.join(projectRoot, relativePath);

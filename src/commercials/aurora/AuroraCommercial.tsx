@@ -1,9 +1,9 @@
 import React from 'react';
-import {AbsoluteFill, interpolate, Sequence, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Sequence, useCurrentFrame} from 'remotion';
 import {AudioCueTimeline} from '../../motion/AudioCueTimeline';
 import {CinematicTransition} from '../../motion/CinematicTransition';
 import {AuroraScene} from './AuroraScene';
-import {AURORA_BEATS, AURORA_CONTRACT} from './timeline';
+import {AURORA_BEATS} from './timeline';
 
 export const AuroraCommercial: React.FC = () => {
   const frame = useCurrentFrame();
@@ -27,17 +27,6 @@ export const AuroraCommercial: React.FC = () => {
       ))}
 
       <CinematicTransition />
-      <AbsoluteFill
-        style={{
-          backgroundColor: '#000',
-          opacity: interpolate(
-            frame,
-            [AURORA_CONTRACT.durationSec * AURORA_CONTRACT.fps - 10, AURORA_CONTRACT.durationSec * AURORA_CONTRACT.fps - 1],
-            [0, 1],
-            {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'},
-          ),
-        }}
-      />
     </AbsoluteFill>
   );
 };

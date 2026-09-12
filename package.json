@@ -6,25 +6,31 @@
   "description": "AI-native commercial production lab: GPT-directed storyboards, generated visual assets, code-driven motion, and reproducible MP4 rendering.",
   "scripts": {
     "audio:aurora": "python scripts/generate_aurora_audio.py",
+    "test:audio": "python scripts/test_audio.py",
     "assets:aurora": "node scripts/sync_aurora_assets.mjs",
     "prepare:aurora": "npm run audio:aurora && npm run assets:aurora && npm run validate",
     "qa:temporal": "node scripts/temporal_qa.mjs",
+    "finalize:aurora": "node scripts/finalize_aurora.mjs",
     "studio": "remotion studio src/index.ts",
-    "render:aurora": "npm run prepare:aurora && remotion render src/index.ts AuroraColdBrew commercials/aurora-cold-brew/output/aurora-cold-brew-v1-1.mp4 --codec=h264 --crf=18",
+    "render:aurora": "npm run prepare:aurora && remotion render src/index.ts AuroraColdBrew commercials/aurora-cold-brew/output/aurora-cold-brew-v1-2-render.mp4 --codec=h264 --crf=18 --pixel-format=yuv420p && npm run finalize:aurora",
     "typecheck": "tsc --noEmit",
+    "test:contract": "node scripts/test-contract-mutations.mjs",
+    "test:v12": "node scripts/test-v12-runtime.mjs",
+    "test:mastering": "node scripts/test-mastering.mjs",
     "test:motion": "node scripts/test-motion-math.mjs && node scripts/test-reproducibility.mjs",
     "validate:contract": "node scripts/validate.mjs",
-    "validate": "npm run validate:contract && npm run test:motion && npm run typecheck"
+    "validate": "npm run validate:contract && npm run test:contract && npm run test:v12 && npm run test:audio && npm run test:mastering && npm run test:motion && npm run typecheck"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.365",
-    "remotion": "^4.0.365",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "remotion": "^4.0.365"
   },
   "devDependencies": {
     "@types/react": "^19.1.1",
     "@types/react-dom": "^19.1.1",
+    "ajv": "^8.20.0",
     "typescript": "^5.9.2"
   }
 }

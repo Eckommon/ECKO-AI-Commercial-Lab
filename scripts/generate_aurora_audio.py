@@ -1,59 +1,57 @@
 from pathlib import Path
 import json
 import math
+import os
 import random
 import struct
 import wave
 
 SR = 48000
-OUT = Path(__file__).resolve().parents[1] / "commercials/aurora-cold-brew/audio/aurora-bed.wav"
-STORYBOARD = OUT.parents[1] / "storyboard/storyboard.json"
+ROOT = Path(__file__).resolve().parents[1]
+OUT = Path(os.environ.get('AURORA_AUDIO_OUT', ROOT / 'commercials/aurora-cold-brew/audio/aurora-bed.wav'))
+STORYBOARD = ROOT / 'commercials/aurora-cold-brew/storyboard/storyboard.json'
 OUT.parent.mkdir(parents=True, exist_ok=True)
-random.seed(7)
 
-with STORYBOARD.open(encoding="utf-8") as storyboard_file:
+with STORYBOARD.open(encoding='utf-8') as storyboard_file:
     storyboard = json.load(storyboard_file)
 
-DUR = float(storyboard["durationSec"])
-CUE_TIMES = [float(shot["startSec"]) for shot in storyboard["shots"] if shot.get("sfx")]
+DUR = float(storyboard['durationSec'])
+CUES = [(float(shot['startSec']), shot['sfx']) for shot in storyboard['shots'] if shot.get('sfx')]
 
-def env(t, a, b, attack=0.04, release=0.25):
-    if t < a or t >= b:
-        return 0.0
-    if t < a + attack:
-        return (t - a) / attack
-    if t > b - release:
-        return max(0.0, (b - t) / release)
-    return 1.0
+def env(t, a, b, attack=.04, release=.25):
+    if t < a or t >= b: return 0.
+    if t < a + attack: return (t-a) / attack
+    if t > b-release: return max(0., (b-t) / release)
+    return 1.
 
-def hit(t, at, freq=70, decay=0.45):
-    d = t - at
-    return 0.0 if d < 0 or d > 1.2 else math.sin(2 * math.pi * freq * d) * math.exp(-d / decay)
+def hit(t, at, freq, decay):
+    d = t-at
+    return 0. if d < 0 or d > 1.2 else math.sin(2*math.pi*freq*d) * math.exp(-d/decay)
 
-frames = []
+rng_l, rng_r = random.Random(7), random.Random(17)
+frames = bytearray()
 for i in range(int(SR * DUR)):
     t = i / SR
-    pad = (
-        0.18 * math.sin(2 * math.pi * 55 * t)
-        + 0.09 * math.sin(2 * math.pi * 82.5 * t)
-        + 0.05 * math.sin(2 * math.pi * 110 * t)
-    )
-    pulse = 0.0
-    for at in CUE_TIMES:
-        pulse += 0.34 * hit(t, at, 58 if at != 16 else 44, 0.38)
-    shimmer = 0.035 * math.sin(2 * math.pi * (420 + 20 * math.sin(t * 0.7)) * t)
-    rise = env(t, 14.5, 16.2, 0.2, 0.05) * (
-        0.09 * math.sin(2 * math.pi * (120 + 120 * (t - 14.5)) * t)
-    )
-    noise = (random.random() * 2 - 1) * 0.012
-    master = 0.66 if t < 36 else max(0.0, 0.66 * (40 - t) / 4)
-    x = max(-1, min(1, (pad + pulse + shimmer + rise + noise) * master))
-    frames.append(struct.pack("<h", int(x * 32767)))
+    bass = .11*math.sin(2*math.pi*55*t) + .045*math.sin(2*math.pi*82.5*t)
+    centered = 0.
+    for at, name in CUES:
+        strength = .46 if name == 'impact-hit' else .13
+        frequency = 44 if name == 'impact-hit' else 62
+        centered += strength * hit(t, at, frequency, .28 if name == 'impact-hit' else .20)
+    tension = env(t, 14.5, 16.0, .25, .06) * .045 * math.sin(2*math.pi*(135 + 70*(t-14.5))*t)
+    width = .018 * math.sin(2*math.pi*(510 + 18*math.sin(t*.7))*t)
+    air_l = width + (rng_l.random()*2-1)*.006
+    air_r = -.72*width + (rng_r.random()*2-1)*.006
+    fade = 1. if t < 38 else max(0., (40-t)/2)
+    common = (bass + centered + tension) * fade
+    left = max(-1., min(1., (common + air_l*fade) * .72))
+    right = max(-1., min(1., (common + air_r*fade) * .72))
+    frames.extend(struct.pack('<hh', int(left*32767), int(right*32767)))
 
-with wave.open(str(OUT), "wb") as w:
-    w.setnchannels(1)
-    w.setsampwidth(2)
-    w.setframerate(SR)
-    w.writeframes(b"".join(frames))
+with wave.open(str(OUT), 'wb') as wav:
+    wav.setnchannels(2)
+    wav.setsampwidth(2)
+    wav.setframerate(SR)
+    wav.writeframes(frames)
 
 print(OUT)
