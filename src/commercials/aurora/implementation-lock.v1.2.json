@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "campaignId": "ACB-001",
+  "creativeDirection": "commercials/aurora-cold-brew/design/creative-direction.v1.2.json",
+  "creativeDirectionSha256": "96D017266A9FD63B9405B16031998A056767666F945EC1AC5154881DF6DC896A",
+  "implementationRecipe": "src/commercials/aurora/recipe.ts"
+}

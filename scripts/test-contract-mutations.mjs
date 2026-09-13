@@ -11,6 +11,8 @@ const required = [
   'commercials/aurora-cold-brew/design/creative-direction.v1.2.json',
   'commercials/aurora-cold-brew/assets',
   'factory/creative_direction.schema.json',
+  'src/commercials/aurora/implementation-lock.v1.2.json',
+  'src/commercials/aurora/recipe.ts',
   'src/commercials/aurora/timeline.ts',
 ];
 
@@ -97,4 +99,19 @@ for (const [name, alter, message] of [
   }
 }
 
-console.log(`PASS: ${cases.length + 3} adversarial contract mutations rejected`);
+{
+  const root = cloneFixture();
+  try {
+    const designPath = jsonPath(root, 'design');
+    fs.appendFileSync(designPath, ' ');
+    assert.throws(
+      () => validateAuroraCampaign({root}),
+      /implementation binding|SHA-256/i,
+      'creative-direction byte drift',
+    );
+  } finally {
+    fs.rmSync(root, {recursive: true, force: true});
+  }
+}
+
+console.log(`PASS: ${cases.length + 4} adversarial contract mutations rejected`);

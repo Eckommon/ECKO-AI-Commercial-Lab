@@ -21,7 +21,11 @@ export const validateAuroraCampaign = ({root = process.cwd()} = {}) => {
   const campaign = path.join(root, 'commercials/aurora-cold-brew');
   const brief = readJson(path.join(campaign, 'brief/brief.json'));
   const story = readJson(path.join(campaign, 'storyboard/storyboard.json'));
-  const design = readJson(path.join(campaign, 'design/creative-direction.v1.2.json'));
+  const designRelative = 'commercials/aurora-cold-brew/design/creative-direction.v1.2.json';
+  const designPath = path.join(root, designRelative);
+  const designBytes = fs.readFileSync(designPath);
+  const design = JSON.parse(designBytes.toString('utf8'));
+  const implementationBinding = readJson(path.join(root, 'src/commercials/aurora/implementation-lock.v1.2.json'));
   const schema = readJson(path.join(root, 'factory/creative_direction.schema.json'));
   const validateSchema = new Ajv2020({allErrors: true, strict: true}).compile(schema);
   if (!validateSchema(design)) {
@@ -79,6 +83,19 @@ export const validateAuroraCampaign = ({root = process.cwd()} = {}) => {
     throw new Error('Creative treatment coverage must be exactly one per governed beat');
   }
 
+  const implementationRecipe = 'src/commercials/aurora/recipe.ts';
+  const designSha256 = crypto.createHash('sha256').update(designBytes).digest('hex').toUpperCase();
+  if (
+    implementationBinding.schemaVersion !== 1 ||
+    implementationBinding.campaignId !== brief.campaignId ||
+    implementationBinding.creativeDirection !== designRelative ||
+    implementationBinding.implementationRecipe !== implementationRecipe ||
+    implementationBinding.creativeDirectionSha256 !== designSha256
+  ) {
+    throw new Error('Creative-direction SHA-256 does not match the reviewed implementation binding');
+  }
+  if (!fs.existsSync(path.join(root, implementationRecipe))) throw new Error('Missing bound AURORA implementation recipe');
+
   const manifestPath = path.join(campaign, 'assets/ASSET_SHA256.txt');
   const manifest = fs.readFileSync(manifestPath, 'utf8').trim().split(/\r?\n/).map((line) => {
     const match = /^([A-Fa-f0-9]{64})\s+(.+)$/.exec(line);
@@ -111,5 +128,6 @@ export const validateAuroraCampaign = ({root = process.cwd()} = {}) => {
       riskFallbacks: design.riskFallbacks,
     },
     review: {thesis: design.thesis, productPriority: design.productPriority, visualHierarchy: design.visualHierarchy},
+    implementationBinding,
   };
 };

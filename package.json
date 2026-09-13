@@ -12,7 +12,7 @@
     "qa:temporal": "node scripts/temporal_qa.mjs",
     "finalize:aurora": "node scripts/finalize_aurora.mjs",
     "studio": "remotion studio src/index.ts",
-    "render:aurora": "npm run prepare:aurora && remotion render src/index.ts AuroraColdBrew commercials/aurora-cold-brew/output/aurora-cold-brew-v1-2-render.mp4 --codec=h264 --crf=18 --pixel-format=yuv420p && npm run finalize:aurora",
+    "render:aurora": "npm run prepare:aurora && remotion render src/index.ts AuroraColdBrew commercials/aurora-cold-brew/output/aurora-cold-brew-v1-2-render.mp4 --codec=h264 --crf=18 --pixel-format=yuv420p --color-space=bt709 && npm run finalize:aurora",
     "typecheck": "tsc --noEmit",
     "test:contract": "node scripts/test-contract-mutations.mjs",
     "test:v12": "node scripts/test-v12-runtime.mjs",

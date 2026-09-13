@@ -92,6 +92,8 @@ try {
     'commercials/aurora-cold-brew/design/creative-direction.v1.2.json',
     'commercials/aurora-cold-brew/assets',
     'factory/creative_direction.schema.json',
+    'src/commercials/aurora/implementation-lock.v1.2.json',
+    'src/commercials/aurora/recipe.ts',
     'src/commercials/aurora/timeline.ts',
   ]) {
     const source = path.join(projectRoot, relativePath);
