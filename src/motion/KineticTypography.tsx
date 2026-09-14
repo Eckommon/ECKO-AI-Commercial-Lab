@@ -9,14 +9,16 @@ export const KineticTypography: React.FC<{
 }> = ({text, durationFrames, recipe}) => {
   const frame = useCurrentFrame();
   const units = recipe.mode === 'word' ? text.split(' ') : Array.from(text);
-  const exitStart = Math.max(42, durationFrames - 20);
+  const completion = Math.ceil(durationFrames * recipe.completeAt);
+  const lastDelay = Math.max(0, units.length - 1) * (recipe.mode === 'word' ? 6 : 3);
+  const entrance = Math.max(8, completion - lastDelay);
 
   return (
     <AbsoluteFill
       style={{
         alignItems: 'center',
-        justifyContent: recipe.align === 'center' ? 'center' : 'flex-end',
-        padding: recipe.align === 'bottom' ? `0 82px ${recipe.bottomOffset ?? 214}px` : '0 82px',
+        justifyContent: recipe.align === 'center' ? 'center' : recipe.align === 'top' ? 'flex-start' : 'flex-end',
+        padding: recipe.align === 'bottom' ? `0 82px ${recipe.bottomOffset ?? 214}px` : recipe.align === 'top' ? `${recipe.topOffset ?? 82}px 82px 0` : '0 82px',
       }}
     >
       {recipe.align === 'bottom' ? (
@@ -45,17 +47,17 @@ export const KineticTypography: React.FC<{
       >
         {units.map((unit, index) => {
           const delay = index * (recipe.mode === 'word' ? 6 : 3);
-          const opacity = interpolate(frame, [delay, delay + 15, exitStart, durationFrames - 1], [0, 1, 1, recipe.holdToEnd ? 1 : 0], {
-            easing: [Easing.bezier(0.16, 1, 0.3, 1), Easing.linear, Easing.bezier(0.7, 0, 0.84, 0)],
-            extrapolateLeft: 'clamp',
-            extrapolateRight: 'clamp',
-          });
-          const y = interpolate(frame, [delay, delay + 18], [46, 0], {
+          const opacity = interpolate(frame, [delay, delay + entrance], [0, 1], {
             easing: Easing.bezier(0.16, 1, 0.3, 1),
             extrapolateLeft: 'clamp',
             extrapolateRight: 'clamp',
           });
-          const blur = interpolate(frame, [delay, delay + 13], [12, 0], {
+          const y = interpolate(frame, [delay, delay + entrance], [32, 0], {
+            easing: Easing.bezier(0.16, 1, 0.3, 1),
+            extrapolateLeft: 'clamp',
+            extrapolateRight: 'clamp',
+          });
+          const blur = interpolate(frame, [delay, delay + entrance], [8, 0], {
             extrapolateLeft: 'clamp',
             extrapolateRight: 'clamp',
           });

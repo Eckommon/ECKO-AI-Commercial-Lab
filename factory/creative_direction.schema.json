@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Commercial Factory Creative Direction Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "campaignId",
+    "thesis",
+    "productPriority",
+    "visualHierarchy",
+    "sceneFamilies",
+    "beatTreatments",
+    "typographyDirection",
+    "audioDirection",
+    "masteringIntent",
+    "riskFallbacks"
+  ],
+  "properties": {
+    "campaignId": {"type": "string", "minLength": 1},
+    "thesis": {"type": "string", "minLength": 1},
+    "productPriority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["principle", "heroHoldPolicy", "atmosphereLimit"],
+      "properties": {
+        "principle": {"type": "string", "minLength": 1},
+        "heroHoldPolicy": {"type": "string", "minLength": 1},
+        "atmosphereLimit": {"type": "string", "minLength": 1}
+      }
+    },
+    "visualHierarchy": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "sceneFamilies": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "purpose", "allowedTechniques", "avoid"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "purpose": {"type": "string", "minLength": 1},
+          "allowedTechniques": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "avoid": {
+            "type": "array",
+            "items": {"type": "string"}
+          }
+        }
+      }
+    },
+    "beatTreatments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "beatId",
+          "sceneFamily",
+          "visualPriority",
+          "cameraIntent",
+          "typographyIntent",
+          "transitionIntent",
+          "audioIntent",
+          "sourceTreatment",
+          "fallback",
+          "riskNotes"
+        ],
+        "properties": {
+          "beatId": {"type": "string", "minLength": 1},
+          "sceneFamily": {"type": "string", "minLength": 1},
+          "visualPriority": {"type": "string", "minLength": 1},
+          "cameraIntent": {"type": "string", "minLength": 1},
+          "typographyIntent": {"type": "string", "minLength": 1},
+          "transitionIntent": {"type": "string", "minLength": 1},
+          "audioIntent": {"type": "string", "minLength": 1},
+          "sourceTreatment": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["strategy", "allowMask", "allowSourceDerivedCleanup"],
+            "properties": {
+              "strategy": {"type": "string", "minLength": 1},
+              "allowMask": {"type": "boolean"},
+              "allowSourceDerivedCleanup": {"type": "boolean"}
+            }
+          },
+          "fallback": {"type": "string", "minLength": 1},
+          "riskNotes": {
+            "type": "array",
+            "items": {"type": "string"}
+          }
+        }
+      }
+    },
+    "typographyDirection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["hierarchy", "motionPrinciple", "readabilityRule"],
+      "properties": {
+        "hierarchy": {"type": "string", "minLength": 1},
+        "motionPrinciple": {"type": "string", "minLength": 1},
+        "readabilityRule": {"type": "string", "minLength": 1}
+      }
+    },
+    "audioDirection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["structure", "cuePolicy", "dynamicIntent"],
+      "properties": {
+        "structure": {"type": "string", "minLength": 1},
+        "cuePolicy": {"type": "string", "minLength": 1},
+        "dynamicIntent": {"type": "string", "minLength": 1}
+      }
+    },
+    "masteringIntent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["color", "pixelFormat", "deliveryNotes"],
+      "properties": {
+        "color": {"type": "string", "minLength": 1},
+        "pixelFormat": {"type": "string", "minLength": 1},
+        "deliveryNotes": {"type": "string", "minLength": 1}
+      }
+    },
+    "riskFallbacks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["risk", "fallback"],
+        "properties": {
+          "risk": {"type": "string", "minLength": 1},
+          "fallback": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "campaignId": "ACB-001",
+  "thesis": "Cold energy, held in control: discover the wet black-and-emerald object, name the sensation, release one concentrated impact, then give the product time to become memorable. Design-review candidate for Issue #6; governed brief and storyboard remain authoritative. Read with docs/AURORA_V1_2_DESIGN_RATIONALE.md and docs/AURORA_V1_2_IMPLEMENTATION_HANDOFF.md.",
+  "productPriority": {
+    "principle": "The can, its silhouette and AURORA identity anchor the film. Each beat has one dominant objective. Preserve its storyboard asset even when the filename does not describe the visible composition. No added claims, packaging edits, asset substitution or invented surfaces.",
+    "heroHoldPolicy": "Use local progress u within each governed beat, never new beat boundaries. S05 settles by u=0.32; S06 camera and editable type settle by u=0.30 and hold through its end; S09 settles by u=0.25 and holds through the last frame. Stable means no product or type translation, scaling, rotation or opacity cycling; only low peripheral atmosphere may continue. S03 copy completes by u=0.25; S08 by u=0.40; retain complete copy through each owning beat.",
+    "atmosphereLimit": "Keep additional mist below or beside the can and light outside the central label. At most one added atmospheric behavior should be perceptually prominent at a time. No foreground particle crossing a reading line, competing sparkle field, product-erasing bloom or opaque transition. Reduce atmosphere before reducing product or text legibility."
+  },
+  "visualHierarchy": [
+    "Product identity and silhouette are the persistent anchor; S02 and S07 may prioritize surface detail rather than the complete silhouette.",
+    "The owning beat's editable approved copy becomes the reading priority in S03 and S08; product and brand lead S06; campaign line and product share the settled S09 close.",
+    "Condensation, coffee, ice and emerald light support the owning beat's purpose without implying a factual benefit.",
+    "Peripheral atmosphere and transitions are supporting accents. Embedded source typography is inherited raster content, never authorization for new overlay copy."
+  ],
+  "sceneFamilies": [
+    {
+      "id": "reveal-and-signature",
+      "purpose": "S01 introduces the object; S04 recognizes the same object through the emerald signature.",
+      "allowedTechniques": ["Eased full-source camera drift", "Peripheral mist and aurora breathing", "Single controlled light scan", "Optional static same-source background cleanup"],
+      "avoid": ["Unreadable black opening", "Changing packaging", "Moving an extracted can against its baked duplicate", "Full-frame luminous wash"]
+    },
+    {
+      "id": "tactile-study",
+      "purpose": "S02 examines condensation; S07 revisits it with slower lateral breathing room using their assigned splash source.",
+      "allowedTechniques": ["Conservative detail crop of the assigned can", "Diagonal or lateral whole-source camera arc", "Subtle directional light", "Sparse peripheral droplets"],
+      "avoid": ["Swapping in the macro-named alternative asset", "True three-dimensional orbit", "Animating baked splash fragments independently", "Inventing hidden label detail"]
+    },
+    {
+      "id": "editorial-statement",
+      "purpose": "S03 names the sensation and S08 states character with a single editable reading hierarchy.",
+      "allowedTechniques": ["Short character or word entrance", "Quiet opaque editorial field in background space", "Subtle whole-source glide or pullback", "Long complete-copy hold"],
+      "avoid": ["Type over the central brand mark", "Unreadable sequential words with no full phrase hold", "New slogans", "Punctuation or capitalization drift"]
+    },
+    {
+      "id": "contained-impact",
+      "purpose": "S05 is the sole energy peak, expressed through an optical impulse on its assigned macro source.",
+      "allowedTechniques": ["Brief restrained exposure accent", "Attack, recoil and decaying displacement", "Early stable settle"],
+      "avoid": ["Liquid simulation", "Strobing", "Long shake", "Fake shattering ice", "Synthesizing a full can outside the crop"]
+    },
+    {
+      "id": "recognition-and-memory",
+      "purpose": "S06 makes the brand legible; S09 resolves the campaign line beside a stable product.",
+      "allowedTechniques": ["Early-settling hero push", "Editable letter or line choreography", "Static editorial field covering baked headline outside the can", "Restrained peripheral emerald bridge"],
+      "avoid": ["Late camera drift", "Double headline", "Floating can with broken pedestal contact", "Black fade consuming the closing read"]
+    }
+  ],
+  "beatTreatments": [
+    {
+      "beatId": "S01",
+      "sceneFamily": "reveal-and-signature",
+      "visualPriority": "Curiosity through a recognizable wet silhouette, rim and central brand; emerald sits behind the object.",
+      "cameraIntent": "Ease out of a close full-source framing into the hero; retain ground contact. Reveal enough rim and label by u=0.20 to avoid an empty black opening. Conservative depth comes from peripheral veils, not duplicated product pixels.",
+      "typographyIntent": "No editable copy: use the empty storyboard copy exactly. Do not animate or retype inherited side or bottom slogans.",
+      "transitionIntent": "Incoming cold veil recedes inside S01; outgoing boundary is a hard cut into S02. No extra black frames.",
+      "audioIntent": "Retain the governed sub-hit at entry, soft and short; introduce a low tonal bed and sparse airy texture without a recurring heavy pulse.",
+      "sourceTreatment": {"strategy": "Preserve the assigned hero source. Optional static same-source cleanup is limited to off-product promotional background text; leave packaging, droplets and contact shadow intact. No moving subject isolation.", "allowMask": false, "allowSourceDerivedCleanup": true},
+      "fallback": "Use the intact full-source frame with reduced camera travel and peripheral light only. If background text competes, use a deliberate static dark field outside the silhouette; preserve on-can text as inherited source content.",
+      "riskNotes": ["Baked side slogans and bottom headline can pre-empt later beats.", "A dark grade can erase the rim; retain visible black-surface separation."]
+    },
+    {
+      "beatId": "S02",
+      "sceneFamily": "tactile-study",
+      "visualPriority": "Premium tactile detail in the droplets and upper can of the assigned shot-02 source, despite its wide splash composition.",
+      "cameraIntent": "Use a modest detail crop and slow diagonal arc across visible condensation. Soft depth differential belongs to peripheral atmosphere. Ease the move without a snap zoom; do not enlarge until raster detail becomes visibly soft.",
+      "typographyIntent": "No editable copy. Keep the baked footer out of the preferred detail crop; never extract its slogan into a new layer.",
+      "transitionIntent": "Incoming hard cut. A low mist cue prepares S03, but the source and copy switch exactly at S03's governed start; no source-image overlap.",
+      "audioIntent": "Continue a fine high-frequency texture and restrained tonal movement. S02 has no governed sfx: do not add a beat-entry hit or a new cue.",
+      "sourceTreatment": {"strategy": "Use shot-02 as assigned; its splash, ice and can remain one flattened plate. Crop toward condensation without reconstructing pixels. No isolation or texture replacement.", "allowMask": false, "allowSourceDerivedCleanup": false},
+      "fallback": "Widen to a sharp whole-source detail view, reduce arc and droplets, and let the controlled light scan supply tactile emphasis. Accept visible source splash rather than substitute an asset.",
+      "riskNotes": ["Filename and visible composition differ; asset identity takes precedence.", "Extreme crop cannot supply macro resolution that the source lacks."]
+    },
+    {
+      "beatId": "S03",
+      "sceneFamily": "editorial-statement",
+      "visualPriority": "The approved sensation word reads once, clearly, with the portrait can still recognizable.",
+      "cameraIntent": "Retain a short vertical portrait glide; slow to a near hold as the word finishes. Preserve the right-hand product silhouette and label.",
+      "typographyIntent": "Read the exact storyboard copy into editable characters. Place in the lower dark background, outside the central label; complete entrance by u=0.25 and hold the whole word through the beat. No elastic overshoot or rotating characters.",
+      "transitionIntent": "Incoming peripheral mist bridge; outgoing emerald cue links to S04. Bridges never carry this beat's copy across its boundary.",
+      "audioIntent": "Retain entry sub-hit as a restrained punctuation; briefly reduce the bed around the word's arrival. Do not add spoken copy.",
+      "sourceTreatment": {"strategy": "Keep the portrait as one source. Optional same-source cleanup may suppress off-product side text only, with no alteration of label or silhouette.", "allowMask": false, "allowSourceDerivedCleanup": true},
+      "fallback": "Retain the intact portrait and put editable copy in a static dark lower field that does not cross the can. Reduce camera travel if the field and source compete.",
+      "riskNotes": ["A centered headline would cross the AURORA mark.", "The lower field must not conceal the meaningful can contour."]
+    },
+    {
+      "beatId": "S04",
+      "sceneFamily": "reveal-and-signature",
+      "visualPriority": "Establish a single emerald light gesture as the campaign signature while the product remains the visual anchor.",
+      "cameraIntent": "Reverse the earlier drift with a shallow full-source move. Sweep once during the middle portion, then relax before the impact cut. Depth remains peripheral.",
+      "typographyIntent": "No editable copy; do not relight baked promotional text as a headline.",
+      "transitionIntent": "Incoming emerald bridge. End cleanly at the S05 cut; reserve the brief exposure accent for S05's incoming frames.",
+      "audioIntent": "Retain entry sub-hit; gradually increase tonal tension and stereo air, then thin the bed near the end so S05 has headroom. No added boundary cue.",
+      "sourceTreatment": {"strategy": "Reuse S01's safe hero treatment consistently. A procedural beam may frame the source, but does not claim to relight the embedded label or reveal an unseen surface.", "allowMask": false, "allowSourceDerivedCleanup": true},
+      "fallback": "Reduce the scan to a broad dim peripheral glow and retain the reverse drift; use the same intact-source fallback as S01.",
+      "riskNotes": ["Emerald bloom may clip the rim or obscure gold letters.", "A moving light on a flattened plate cannot reproduce physically correct material response."]
+    },
+    {
+      "beatId": "S05",
+      "sceneFamily": "contained-impact",
+      "visualPriority": "One concentrated energy peak in the existing macro texture, then a confident stable image.",
+      "cameraIntent": "Use a short attack, one recoil and rapidly decaying shake on the full plate; settle by u=0.32. Preserve crop coverage and keep the existing can angle. No ongoing turbulence.",
+      "typographyIntent": "No editable copy; do not promote the macro source's side text into this beat's message.",
+      "transitionIntent": "Incoming exact cut with one subdued exposure accent, never a white frame or strobe. Outgoing mist prepares the S06 hero without blending two cans.",
+      "audioIntent": "The governed impact-hit is the film's strongest transient. A compact low impact and short bright texture decay quickly, leaving room for the settled image and next hero.",
+      "sourceTreatment": {"strategy": "Use the assigned shot-04 macro plate unchanged in identity. Optional static same-source cleanup affects only off-product side text. Do not extract droplets, ice, beans or liquid as moving objects.", "allowMask": false, "allowSourceDerivedCleanup": true},
+      "fallback": "Disable exposure accent and reduce recoil amplitude; keep the governed impact-hit and early settle. Use an intact plate with no cleanup when seams appear.",
+      "riskNotes": ["Assigned shot-04 is a macro crop, not the splash image: do not swap sources.", "Shake can reveal borders or magnify baked lettering; coverage and readability constrain amplitude."]
+    },
+    {
+      "beatId": "S06",
+      "sceneFamily": "recognition-and-memory",
+      "visualPriority": "Hero product recognition: the complete upright can and editable brand word, with no competing campaign headline.",
+      "cameraIntent": "A restrained hero push settles by u=0.30, leaving the remaining 70 percent as stable recognition time. Keep the pedestal contact and a clear silhouette.",
+      "typographyIntent": "Use the exact storyboard brand word as editable letter choreography in an upper editorial field, complete by u=0.30. Cover the baked upper campaign headline completely in that field. Preserve the on-can mark and avoid a third independent brand treatment.",
+      "transitionIntent": "Incoming peripheral mist clears early; outgoing boundary to S07 is a hard cut. No departing wipe consumes the hero hold.",
+      "audioIntent": "Retain the entry sub-hit, warmer and quieter than S05. Open into a sustained tonal section with little percussion; the product hold should feel earned.",
+      "sourceTreatment": {"strategy": "Keep shot-05 can and pedestal together. An opaque static background editorial field outside the rim is the baseline for baked headline suppression. Optional same-source background cleanup may replace this field only if temporally invisible. No independent can movement.", "allowMask": false, "allowSourceDerivedCleanup": true},
+      "fallback": "Retain the intact source under the opaque upper field; lock camera earlier so the hidden headline cannot escape. Fit editable brand text within that field without covering the rim. If this cannot fit, stop for layout review; do not remove editable copy or change asset.",
+      "riskNotes": ["Baked campaign headline competes with the owning beat's brand word.", "Can separation would require reconstructing the pedestal and background; that is not authorized."]
+    },
+    {
+      "beatId": "S07",
+      "sceneFamily": "tactile-study",
+      "visualPriority": "Premium breathing room through a quieter second examination of the assigned source's wet surface.",
+      "cameraIntent": "A shallow eased lateral arc creates an orbit impression without changing visible geometry. Travel and added particle activity should be lower than S02. Do not rotate the can or reveal its back.",
+      "typographyIntent": "No editable copy. Preserve the absence of a reading task after the hero hold.",
+      "transitionIntent": "Incoming hard cut from hero; outgoing hard cut into S08. The quiet camera phrase needs no extra bridge.",
+      "audioIntent": "Retain the entry sub-hit at low level. Reduce rhythmic density and bass activity; leave airy stereo space while keeping mono compatibility.",
+      "sourceTreatment": {"strategy": "Keep shot-02 splash source as one plate, using the same safe crop envelope as S02 with a different camera direction. No isolated splash fragments or new geometry.", "allowMask": false, "allowSourceDerivedCleanup": false},
+      "fallback": "Use a smaller lateral translation and wider crop with dim peripheral light; a restrained two-dimensional arc satisfies the orbit illusion.",
+      "riskNotes": ["Repeated source must feel like a deliberate return, not a second energy peak.", "Orbit is an optical impression only."]
+    },
+    {
+      "beatId": "S08",
+      "sceneFamily": "editorial-statement",
+      "visualPriority": "Product character through the complete three-word approved statement, never a second impact scene.",
+      "cameraIntent": "Hard cut into a subtle whole-source pullback on shot-04; minimal depth and no shake. Let type provide the principal change.",
+      "typographyIntent": "Use exact storyboard copy in editable word groups, reading in order; finish by u=0.40 and hold all words together through the beat. Prefer a compact lower editorial field with two lines if needed, retaining literal punctuation and spaces in the source string. No per-word exit.",
+      "transitionIntent": "Incoming hard cut. Outgoing peripheral aurora bridge into S09; complete phrase remains legible until its owning boundary.",
+      "audioIntent": "Retain one governed entry sub-hit; use a restrained tonal lift under the word sequence. Do not manufacture three new governed hits or voice claims.",
+      "sourceTreatment": {"strategy": "Preserve the assigned macro crop. Use a quiet opaque field in background/foreground space outside the central brand to separate editorial copy from baked packaging; optional cleanup is limited to off-product text.", "allowMask": false, "allowSourceDerivedCleanup": true},
+      "fallback": "If the field crosses the can, use an intentional split editorial layout: uniformly fit the intact assigned plate in the upper approximately 72 percent of a dark canvas, with a separate lower text band. Keep the complete existing source crop visible, retain subtle pullback within its panel, and wrap the exact editable phrase into two lines inside the global text insets. This is whole-image layout, not a product mask or invented background. Never paint over packaging to create space. Stop for layout review only if both layouts fail readability and product protection.",
+      "riskNotes": ["Dense macro composition has little negative space.", "Baked side text differs from the approved overlay string and must not be used as its substitute."]
+    },
+    {
+      "beatId": "S09",
+      "sceneFamily": "recognition-and-memory",
+      "visualPriority": "Brand memory: one editable campaign headline above a stable, complete hero product.",
+      "cameraIntent": "Arrive gently and settle by u=0.25; hold position, scale and exposure through the final frame. Peripheral atmosphere may breathe below reading salience. No fade to black inside this beat.",
+      "typographyIntent": "Read the exact storyboard campaign line into editable line choreography in the same upper field used in S06. Fully cover the baked headline before revealing the editable line; complete by u=0.25 and retain complete copy to the final frame.",
+      "transitionIntent": "Incoming restrained peripheral aurora bridge clears before the settled hold. End on the resolved product-and-line frame; no extra outro or duration extension.",
+      "audioIntent": "Retain the governed entry sub-hit as a gentle resolution; let the tonal tail decay to silence by the final audio sample. No late impact, voiceover or loop restart.",
+      "sourceTreatment": {"strategy": "Use shot-05 with the same protected can/pedestal and upper editorial field as S06. Optional same-source cleanup may suppress background headline only; canonical pixels on disk remain unchanged.", "allowMask": false, "allowSourceDerivedCleanup": true},
+      "fallback": "Use the intact source under an opaque upper field, camera locked early, with editable campaign line fitted above the rim. Reject visible duplicate text, seams or rim occlusion; stop for layout review if the baseline field cannot meet these conditions.",
+      "riskNotes": ["Source already contains the campaign line; doubling it defeats the close.", "Late fade or typography exit would shorten the intended memory hold."]
+    }
+  ],
+  "typographyDirection": {
+    "hierarchy": "Restrained warm gold, one editable reading block per copy-bearing beat. Use a readable roman serif for sensation and campaign lines if locally available and reproducible; use a clean sans for the S06 brand word without inventing a replacement packaging logo. No new font acquisition required; a pinned readable local sans is an acceptable fallback for all overlays.",
+    "motionPrinciple": "Small opacity and positional entrances with brief character, word or line offsets; always converge into a stable complete string. No scramble, glyph substitution, bouncing, perspective or perpetual tracking animation. Copy comes from storyboard, never from this prose or image OCR.",
+    "readabilityRule": "Keep editable text within a 6 percent horizontal and 8 percent vertical design inset. Fit by line breaks and modest size adjustment, never altered wording. Aim for at least 64 output pixels in capital height and clear contrast on a quiet field at 1080x1920. Inspect at full size and 270x480. Preserve the S03/S06/S08/S09 completion and hold policies; no cross-beat copy leakage. Insets are design guides, not platform UI certification."
+  },
+  "audioDirection": {
+    "structure": "S01-S03 discovery: low tone, fine cold texture, spacious punctuation. S04 gathers tension; S05 releases the only major impact. S06 opens into a sustained hero section; S07 thins into breathing room. S08 lifts gently; S09 resolves and decays to silence. No voiceover or musical claim of a product benefit.",
+    "cuePolicy": "Preserve storyboard sfx presence, names and boundary-derived positions exactly, including no sfx on S02. Musical dynamics may vary within beats, but must not become a competing semantic cue schedule. Use the common governed frame clock. Keep low impact energy centered; stereo width belongs to subtle upper textures and must survive mono fold-down.",
+    "dynamicIntent": "Perceived impact peaks at S05; hero and close are quieter and spacious. Retain transient headroom, avoid pumping and hard clipping. For this benchmark, SHOULD target approximately -16 LUFS integrated with true peak no higher than -1 dBTP after delivery encoding; measure and report actual LUFS, LRA and true peak. These are proposed creative mix targets, not platform or broadcast certification."
+  },
+  "masteringIntent": {
+    "color": "SDR BT.709 with explicit matching matrix, transfer and primaries; deliberate limited-range delivery with preserved black-can separation and no emerald highlight clipping. Correct actual signal interpretation before applying metadata.",
+    "pixelFormat": "yuv420p",
+    "deliveryNotes": "Preserve governed 1080x1920, 30 fps and exactly 1200 video frames / 40 seconds. Broadly compatible H.264 MP4 with faststart and stereo AAC is the delivery intent. Report video, audio and container durations separately; codec padding never authorizes extra video frames. Source audio content ends at 40 seconds. Human full-speed audiovisual playback remains the publication/release gate. No render, audio or mastering implementation is supplied by this design mission."
+  },
+  "riskFallbacks": [
+    {"risk": "Flattened sources cannot support a clean independently moving product, transparent ice extraction, physical liquid motion or true orbit.", "fallback": "Use a protected whole-source plate and peripheral procedural atmosphere; all beat treatments disable product masks. Future isolation needs separate evidence and a reviewed contract revision."},
+    {"risk": "Off-product raster slogans compete with governed editable typography; same-source cleanup may smear, tile or swim.", "fallback": "Use crop where safe or a static opaque editorial field outside the product. Do not retouch packaging or promote inherited slogans. Mandatory copy must remain editable; stop for layout review if the safe field cannot fit."},
+    {"risk": "Canonical on-can microcopy contains promotional language beyond the editable storyboard copy.", "fallback": "Preserve canonical identity and do not enlarge it for a claim-reading moment, retype it or assert claims clearance. Log inherited content for Human publication review; a demand to remove it would require a separately approved source-policy change."},
+    {"risk": "Glow, shake, droplets or oversized typography obscure the product or expose source boundaries.", "fallback": "Reduce effect amplitude or disable the offending layer, widen crop and protect the central label. Retain governed beat purpose and copy."},
+    {"risk": "Schema validity alone cannot prove referenced beats, timing integrity, complete coverage, source identity or perceptual quality.", "fallback": "Executor must enforce exact beat coverage and family references against governed sources, then inspect rendered beat and boundary evidence. Missing assets or contract drift block rendering."},
+    {"risk": "System fonts, stereo cancellation, loudness or incorrect color interpretation compromise reproducibility and delivery.", "fallback": "Resolve and pin available font metrics, narrow audio width, reduce limiting and correct signal handling; document measured results. No media acceptance or release is implied by design approval."}
+  ]
+}

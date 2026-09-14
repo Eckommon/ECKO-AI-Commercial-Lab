@@ -26,6 +26,9 @@ export const AuroraScene: React.FC<{beat: BeatRecipe; globalFrame: number}> = ({
             src={`${ASSET_ROOT}${beat.asset}`}
             durationFrames={beat.durationFrames}
             depth={beat.depth}
+            surface={beat.v12.surface}
+            layout={beat.v12.layout}
+            objectPosition={beat.v12.objectPosition}
           />
         </CinematicCamera>
       </ImpactMotion>

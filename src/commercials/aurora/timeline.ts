@@ -1,6 +1,7 @@
 import brief from '../../../commercials/aurora-cold-brew/brief/brief.json';
 import storyboard from '../../../commercials/aurora-cold-brew/storyboard/storyboard.json';
 import {deriveAuroraContract} from './contract';
+import {AURORA_V12_RECIPES} from './recipe';
 
 export const AURORA_CONTRACT = deriveAuroraContract(brief);
 
@@ -40,10 +41,11 @@ export type LightRecipe = {
 
 export type TypographyRecipe = {
   mode: 'word' | 'characters';
-  align: 'center' | 'bottom';
+  align: 'center' | 'bottom' | 'top';
   size: number;
   bottomOffset?: number;
-  holdToEnd?: boolean;
+  topOffset?: number;
+  completeAt: number;
 };
 
 export type BeatRecipe = {
@@ -62,6 +64,7 @@ export type BeatRecipe = {
   light: LightRecipe;
   typography?: TypographyRecipe;
   impact?: boolean;
+  v12: (typeof AURORA_V12_RECIPES)[BeatId];
 };
 
 type MotionRecipe = Pick<
@@ -87,7 +90,7 @@ const recipes: Record<BeatId, MotionRecipe> = {
     depth: {amount: 0.18, focusX: 57, focusY: 45, radius: 34},
     atmosphere: {mist: 0.62, droplets: 0.25, sparkle: 0.12, direction: 1},
     light: {intensity: 0.42, beamAngle: -10},
-    typography: {mode: 'characters', align: 'center', size: 132},
+    typography: {mode: 'characters', align: 'bottom', size: 132, bottomOffset: 260, completeAt: .25},
   },
   S04: {
     camera: {scale: [1.085, 1.025], x: [6, -8], y: [-10, 5]},
@@ -103,11 +106,11 @@ const recipes: Record<BeatId, MotionRecipe> = {
     impact: true,
   },
   S06: {
-    camera: {scale: [1.055, 1.095], x: [-5, 5], y: [10, -8]},
+    camera: {scale: [1.055, 1.095], x: [-5, 5], y: [10, -8], settleAt: 0.30},
     depth: {amount: 0.24, focusX: 50, focusY: 51, radius: 29, foreground: true},
     atmosphere: {mist: 0.66, droplets: 0.3, sparkle: 0.2, direction: -1},
     light: {intensity: 0.58, beamAngle: 6},
-    typography: {mode: 'characters', align: 'bottom', size: 92, bottomOffset: 330},
+    typography: {mode: 'characters', align: 'top', size: 92, topOffset: 78, completeAt: .30},
   },
   S07: {
     camera: {scale: [1.09, 1.135], x: [-30, 24], y: [8, -12]},
@@ -120,14 +123,14 @@ const recipes: Record<BeatId, MotionRecipe> = {
     depth: {amount: 0.06, focusX: 64, focusY: 46, radius: 42},
     atmosphere: {mist: 0.38, droplets: 0.45, sparkle: 0.24, direction: -1},
     light: {intensity: 0.54, beamAngle: 6},
-    typography: {mode: 'word', align: 'bottom', size: 76, bottomOffset: 170},
+    typography: {mode: 'word', align: 'bottom', size: 76, bottomOffset: 82, completeAt: .40},
   },
   S09: {
-    camera: {scale: [1.035, 1.055], x: [0, 0], y: [4, 0], settleAt: 0.55},
+    camera: {scale: [1.035, 1.055], x: [0, 0], y: [4, 0], settleAt: 0.25},
     depth: {amount: 0.12, focusX: 50, focusY: 51, radius: 29},
     atmosphere: {mist: 0.48, droplets: 0.18, sparkle: 0.26, direction: 1},
     light: {intensity: 0.68, beamAngle: 0},
-    typography: {mode: 'word', align: 'bottom', size: 70, bottomOffset: 170, holdToEnd: true},
+    typography: {mode: 'word', align: 'top', size: 70, topOffset: 88, completeAt: .25},
   },
 };
 
@@ -138,7 +141,9 @@ export const AURORA_BEATS: readonly BeatRecipe[] = storyboard.shots.map((shot) =
     id,
     startFrame: sec(shot.startSec),
     durationFrames: sec(shot.endSec - shot.startSec),
+    v12: AURORA_V12_RECIPES[id],
     ...recipes[id],
+    camera: AURORA_V12_RECIPES[id].cameraRecipe,
   };
 });
 
