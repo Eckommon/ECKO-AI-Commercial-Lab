@@ -1,0 +1,22 @@
+{
+  "campaignId": "NVA-002",
+  "product": "NOVAEL ARC Lamp (fictional benchmark brand)",
+  "durationSec": 30,
+  "format": "vertical",
+  "resolution": "1080x1920",
+  "fps": 30,
+  "audience": "design-conscious adults drawn to sculptural ambient objects and restrained interior aesthetics",
+  "creativeGoal": "Make light feel like a quiet sculptural material rather than a technology demonstration.",
+  "campaignLine": "HOLD THE LIGHT.",
+  "supportCopy": ["FORM.", "GLOW."],
+  "visualLanguage": ["graphite", "warm amber", "frosted acrylic", "stone", "deep shadow", "negative space", "restrained modern typography"],
+  "claims": [],
+  "constraints": [
+    "Fictional brand benchmark only",
+    "No performance, energy-efficiency, wellness, comparative or technical product claims",
+    "Vertical short-form delivery",
+    "Typography remains editable in code",
+    "Do not reuse AURORA campaign palette, copy, beverage imagery or campaign-specific scene grammar",
+    "Canonical source assets must depict the same lamp geometry and materials across all five images"
+  ]
+}

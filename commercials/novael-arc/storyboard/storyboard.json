@@ -1,0 +1,13 @@
+{
+  "campaignId": "NVA-002",
+  "durationSec": 30,
+  "shots": [
+    {"id":"S01","startSec":0,"endSec":4,"purpose":"sculptural reveal","asset":"shot-01-hero.png","motion":"quiet reveal that establishes the lamp silhouette and object identity without imitating the AURORA opening","copy":"","sfx":"sub-hit"},
+    {"id":"S02","startSec":4,"endSec":8,"purpose":"material/form study","asset":"shot-02-detail.png","motion":"controlled study of graphite, frosted diffuser and junction detail; product remains a coherent physical object","copy":""},
+    {"id":"S03","startSec":8,"endSec":12,"purpose":"name the design idea","asset":"shot-03-profile.png","motion":"profile-led editorial beat with restrained camera behavior and a complete readable copy hold","copy":"FORM.","sfx":"sub-hit"},
+    {"id":"S04","startSec":12,"endSec":17,"purpose":"light activation","asset":"shot-04-lit.png","motion":"warm-light activation and spatial response; energy rises through illumination rather than impact-shake grammar","copy":"","sfx":"light-rise"},
+    {"id":"S05","startSec":17,"endSec":22,"purpose":"spatial breathing room","asset":"shot-01-hero.png","motion":"quiet whole-object breathing room with negative space and stable product recognition","copy":""},
+    {"id":"S06","startSec":22,"endSec":26,"purpose":"distilled product character","asset":"shot-04-lit.png","motion":"settled illuminated product with editable one-word statement and no additional factual claim","copy":"GLOW.","sfx":"sub-hit"},
+    {"id":"S07","startSec":26,"endSec":30,"purpose":"brand memory and close","asset":"shot-05-endcard.png","motion":"early-settling final composition that holds product and campaign line through the final frame","copy":"HOLD THE LIGHT.","sfx":"sub-hit"}
+  ]
+}
