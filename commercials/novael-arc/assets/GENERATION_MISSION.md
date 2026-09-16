@@ -129,6 +129,10 @@ Only after visual acceptance:
 4. request independent GPT verification;
 5. start Astra design-only work only after `ASSET_PACK_PASS`.
 
+## Materialization provenance
+
+For Benchmark #002, the accepted source Hero and derivative canonical views were created in the ChatGPT image-generation / GPT working environment, **not by Codex**. The five candidate canonical PNGs were normalized to 1080×1920 and packaged outside the repository before local materialization. The repository becomes canonical only after those exact bytes are copied into `commercials/novael-arc/assets/`, the hash manifest is validated locally, and a dedicated checkpoint commit is pushed.
+
 ## State
 
-`GENERATION_MISSION_READY / CANONICAL_IMAGES_PENDING`
+`GPT_SANDBOX_ASSET_PACK_READY / LOCAL_REPO_MATERIALIZATION_PENDING`
