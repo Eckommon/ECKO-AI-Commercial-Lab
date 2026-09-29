@@ -1,8 +1,16 @@
-import {validateAuroraCampaign} from '../factory/validate-contract.mjs';
+import {validateAuroraCampaign, validateNovaelCampaign} from '../factory/validate-campaigns.mjs';
 
 const root = process.cwd();
-const validated = validateAuroraCampaign({root});
+const requested = process.argv[2] ?? 'all';
+const validators = requested === 'aurora'
+  ? [validateAuroraCampaign]
+  : requested === 'novael'
+    ? [validateNovaelCampaign]
+    : [validateAuroraCampaign, validateNovaelCampaign];
 
-console.log(
-  `PASS: creative-direction schema and semantic contract / ${validated.runtime.beats.length} treatments / scene-family references / source hashes`,
-);
+for (const validate of validators) {
+  const validated = validate({root});
+  console.log(
+    `PASS: ${validated.runtime.campaignId} schema/semantics / ${validated.runtime.beats.length} treatments / scene families / source hashes / design binding`,
+  );
+}

@@ -1,0 +1,5 @@
+import {pathToFileURL} from 'node:url';
+import {runTemporalQa} from './temporal_qa_core.mjs';
+export const NOVAEL_QA={outputDirectory:'commercials/novael-arc/output',afterFile:'novael-arc-v1-2.mp4',renderCommand:'npm run render:novael',samples:{'full-1fps':Array.from({length:30},(_,index)=>15+index*30),'hard-cut-boundaries':[119,120,239,240,359,360,509,510,659,660,779,780],'settle-holds':[0,30,119,120,180,239,240,255,359,360,375,390,420,509,510,585,659,660,675,779,780,795,899],'s05-intentional-still':[510,585,659],'phone-readability':[255,359,675,779,795,899]},phoneSamples:['phone-readability'],requiredFreeze:{name:'S05 intentional full-beat still',start:17,duration:5,tolerance:.05},classification:'S05 global frames 510 through 659 are an intentional full-beat still required by the approved design, not a render freeze. S01/S02/S03/S04/S06/S07 stable intervals after their declared deadlines are governed holds.'};
+export const runNovaelTemporalQa=(options={})=>runTemporalQa({...options,config:NOVAEL_QA});
+if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href)runNovaelTemporalQa();

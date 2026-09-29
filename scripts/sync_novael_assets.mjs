@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+import path from 'node:path';
+const root=process.cwd();
+const source=path.join(root,'commercials/novael-arc');
+const target=path.join(root,'public/commercials/novael-arc');
+fs.mkdirSync(path.join(target,'assets'),{recursive:true});
+for(const file of fs.readdirSync(path.join(source,'assets'))) if(file.endsWith('.png')) fs.copyFileSync(path.join(source,'assets',file),path.join(target,'assets',file));
+fs.mkdirSync(path.join(target,'audio'),{recursive:true});
+fs.copyFileSync(path.join(source,'audio/novael-bed.wav'),path.join(target,'audio/novael-bed.wav'));
+console.log('PASS: NOVAEL public assets synchronized');
