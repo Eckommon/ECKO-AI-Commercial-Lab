@@ -12,11 +12,12 @@ export const SourceSurface: React.FC<{
   policy: SourceSurfacePolicy;
   layout: SourceSurfaceLayout;
   objectPosition?: string;
-}> = ({src, policy, layout, objectPosition = '50% 50%'}) => {
+  backgroundColor?: string;
+}> = ({src, policy, layout, objectPosition = '50% 50%', backgroundColor = '#020706'}) => {
   const resolved = resolveSourceSurface(policy);
   const panelHeight = layout.kind === 'split-panel' ? `${layout.sourcePanelRatio * 100}%` : '100%';
   return (
-    <AbsoluteFill style={{backgroundColor: layout.kind === 'split-panel' ? layout.bandColor : '#020706', overflow: 'hidden'}}>
+    <AbsoluteFill style={{backgroundColor: layout.kind === 'split-panel' ? layout.bandColor : backgroundColor, overflow: 'hidden'}}>
       <Img
         src={staticFile(src)}
         style={{

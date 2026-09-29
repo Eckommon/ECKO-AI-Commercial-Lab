@@ -1,0 +1,149 @@
+{
+  "campaignId": "NVA-002",
+  "thesis": "Light held as form: study the continuous arc, let its existing warmth become perceptually present, then give the object space to remain. Governed semantics are inherited by beat reference; treatment never supplies replacement editorial facts.",
+  "productPriority": {
+    "principle": "The continuous graphite arc, diffuser and grounded base read as one object; warm illumination is subordinate to geometry, and editable type occupies existing negative space.",
+    "heroHoldPolicy": "Recognition precedes embellishment. Whole-object beats settle early; the breathing-room beat is still throughout, and the close retains its complete composition through the last frame. Relative treatment deadlines are specified in the handoff without moving governed boundaries.",
+    "atmosphereLimit": "Use the photographed atmosphere only. No added particles, fog, beams, floating dust, bloom pulses or moving background planes. Preserve stone contact, edge separation and diffuser texture."
+  },
+  "visualHierarchy": [
+    "Continuous arc and grounded base, or the existing material junction in the detail study",
+    "Photographed diffuser warmth and its existing spatial response",
+    "Governed editable typography in quiet negative space",
+    "Stone surface, reflections and charcoal environment as one intact plate"
+  ],
+  "sceneFamilies": [
+    {
+      "id": "sculpture-in-space",
+      "purpose": "Establish the whole object, then return to it as an unhurried visual rest.",
+      "allowedTechniques": ["Uniform whole-plate reveal", "Small uniform scale settlement before a locked hold", "Unaltered still plate"],
+      "avoid": ["Orbit simulation", "Independent object/background motion", "Effects climax", "Loss of arc tip, base or contact shadow"]
+    },
+    {
+      "id": "material-study",
+      "purpose": "Let curvature and the shell/diffuser junction carry attention without a technical demonstration.",
+      "allowedTechniques": ["Intact authored detail crop", "Very small uniform whole-plate scale change followed by stillness"],
+      "avoid": ["Invented seams", "Animated highlights", "Texture reconstruction", "Technical labels or measurement graphics"]
+    },
+    {
+      "id": "editorial-object",
+      "purpose": "Pair a settled product image with the complete governed statement, preserving product primacy.",
+      "allowedTechniques": ["Editable restrained sans-serif typography", "Complete-text opacity reveal", "Fixed whole-plate composition", "Separate plain typography field if needed for source safety"],
+      "avoid": ["Letter cascades", "Product-crossing text", "Decorative masks", "Extra brand or sales copy"]
+    },
+    {
+      "id": "light-presence",
+      "purpose": "Make the existing warm illumination arrive as a controlled perceptual event, then hold it.",
+      "allowedTechniques": ["Monotonic uniform reveal of the already-lit whole plate", "Fixed camera", "Hold at original source appearance"],
+      "avoid": ["Simulated electrical switch-on", "Traveling emitter activation", "Synthetic spill", "Flash, shake or brightness overshoot", "Cross-source morphing"]
+    }
+  ],
+  "beatTreatments": [
+    {
+      "beatId": "S01",
+      "sceneFamily": "sculpture-in-space",
+      "visualPriority": "Recognizable arc, base and contact as a single sculpture; open space above is intentional.",
+      "cameraIntent": "Reveal the intact plate with at most a small uniform approach, then stop early for recognition.",
+      "typographyIntent": "Inherit the governed absence of copy; leave the space empty.",
+      "transitionIntent": "Opening reveal belongs wholly to this beat. Exit on a hard cut to the detail study without overlapping source assignments.",
+      "audioIntent": "Give the governed low accent a rounded, soft onset; a sparse low bed opens without a trailer impact.",
+      "sourceTreatment": {"strategy": "Whole source with original contact shadow and reflection retained; no local relighting.", "allowMask": false, "allowSourceDerivedCleanup": false},
+      "fallback": "Use the intact source at native framing, reveal uniformly, and hold without camera motion.",
+      "riskNotes": ["Existing diffuser warmth must not be erased to manufacture an off state.", "Darkening must not make the opening silhouette unreadable."]
+    },
+    {
+      "beatId": "S02",
+      "sceneFamily": "material-study",
+      "visualPriority": "Existing graphite texture and continuous frosted junction; the source's authored crop is the study.",
+      "cameraIntent": "Allow only a very small uniform scale settlement; stop before the final portion of the beat.",
+      "typographyIntent": "No additional copy, diagrams or material specifications.",
+      "transitionIntent": "Hard cuts at entry and exit articulate a change in photographic scale; no faux matched geometry.",
+      "audioIntent": "Continue the sparse bed without inventing a discrete cue at this boundary; expose a little higher tonal texture without literal machinery sound.",
+      "sourceTreatment": {"strategy": "Keep the supplied close crop intact; do not reconstruct the cropped tip, base or unseen material.", "allowMask": false, "allowSourceDerivedCleanup": false},
+      "fallback": "Hold the authored detail image completely still.",
+      "riskNotes": ["Additional magnification can lose material definition.", "The image cannot support independent diffuser motion or a new camera angle."]
+    },
+    {
+      "beatId": "S03",
+      "sceneFamily": "editorial-object",
+      "visualPriority": "Whole profile and grounded base first; the governed statement reads clearly in upper negative space.",
+      "cameraIntent": "Lock the supplied composition; preserve the visible left-edge band as source content.",
+      "typographyIntent": "Reveal the complete governed word together in an off-white medium-weight sans; hold without movement or tracking animation.",
+      "transitionIntent": "Hard cut into the profile; hard cut at exit into the incoming activation treatment, with no inter-source dissolve.",
+      "audioIntent": "Use the governed low accent as editorial punctuation, shorter and quieter in perceived weight than the opening; no letter-synced hits.",
+      "sourceTreatment": {"strategy": "Intact plate with text placed above the arc, outside the left-edge band; no patching or background extension.", "allowMask": false, "allowSourceDerivedCleanup": false},
+      "fallback": "Contain the whole source below a separate plain upper typography field, keeping product and contact fully visible; accept the existing edge band.",
+      "riskNotes": ["Left-edge band and lower surface discontinuity are baked into the source.", "Do not attempt a true side-view reconstruction from the supplied profile composition."]
+    },
+    {
+      "beatId": "S04",
+      "sceneFamily": "light-presence",
+      "visualPriority": "Existing amber diffuser and photographed nearby warmth become present while the graphite outline remains legible.",
+      "cameraIntent": "Fixed whole-source framing throughout; the reveal supplies the only visual rise and resolves into stillness.",
+      "typographyIntent": "Keep activation free of typography and explanatory claims.",
+      "transitionIntent": "Start the incoming whole plate attenuated but readable, then reveal monotonically to its native appearance; exit by hard cut to the quieter assigned composition.",
+      "audioIntent": "The governed activation cue begins at this beat's boundary, slowly opens in warmth and width with the reveal, then settles without an impact or overshoot.",
+      "sourceTreatment": {"strategy": "Uniform reveal of the already-lit source including its baked spill and reflection; this is editorial exposure, not independent emitter or room-light simulation.", "allowMask": false, "allowSourceDerivedCleanup": false},
+      "fallback": "Use a shallower uniform reveal if shadow detail suffers; if any attenuation is unsafe, hold the original lit plate and let the governed audio rise provide activation emphasis.",
+      "riskNotes": ["No unlit state or separately addressable emission layer exists in this source.", "Do not brighten beyond the original source or erase diffuser texture.", "Returning to a quieter plate is an editorial cut, not a demonstrated power-off event."]
+    },
+    {
+      "beatId": "S05",
+      "sceneFamily": "sculpture-in-space",
+      "visualPriority": "Whole-object recognition and negative space; stillness is the purposeful aftermath of activation.",
+      "cameraIntent": "Native framing, fully settled from the first frame through the last; no zoom, pulse or secondary reveal.",
+      "typographyIntent": "Keep the governed empty space free of copy.",
+      "transitionIntent": "Hard cut in and out; accept the assigned quieter source without matching it through invented illumination.",
+      "audioIntent": "Let the previous resonance recede into a near-silent continuous bed; add no cue or anticipation ramp here.",
+      "sourceTreatment": {"strategy": "Intact source held still, including its original residual warmth, surface and reflection.", "allowMask": false, "allowSourceDerivedCleanup": false},
+      "fallback": "The unchanged whole-source still is already the primary and fallback treatment.",
+      "riskNotes": ["A fresh effects peak would reverse the governed breathing-room purpose.", "Do not recolor this source to imitate the activation plate."]
+    },
+    {
+      "beatId": "S06",
+      "sceneFamily": "editorial-object",
+      "visualPriority": "Settled illuminated form with one complete editable statement; no second activation.",
+      "cameraIntent": "Lock the intact lit composition from entry, retaining the original source appearance.",
+      "typographyIntent": "Use the same word hierarchy and complete-text reveal as the earlier editorial beat; hold comfortably in upper negative space.",
+      "transitionIntent": "Hard cuts preserve a clear editorial return to the lit state; no flash or luminance pumping.",
+      "audioIntent": "A soft governed low accent restores presence over a restrained warm bed; do not repeat the activation rise.",
+      "sourceTreatment": {"strategy": "Whole lit plate without added glow, independent emission or shadow manipulation.", "allowMask": false, "allowSourceDerivedCleanup": false},
+      "fallback": "Keep the image still and use the separate upper typography field if negative-space readability is insufficient.",
+      "riskNotes": ["Repeating the activation animation weakens the distinction between event and settled character.", "Oversaturated amber would flatten graphite and diffuser detail."]
+    },
+    {
+      "beatId": "S07",
+      "sceneFamily": "editorial-object",
+      "visualPriority": "Complete product silhouette and governed closing line, both available early and retained through the last frame.",
+      "cameraIntent": "Fixed whole-source framing from entry; no exit movement or fade to black.",
+      "typographyIntent": "Reveal the complete governed line together above the arc, using a compact single line if readable or an intentional two-line break; no added wordmark or CTA.",
+      "transitionIntent": "Hard cut into the final composition, with only a short text-opacity reveal; retain the final image without an outgoing transition.",
+      "audioIntent": "Use the governed low accent as a soft final point, then resolve the bed toward silence without a final sting or tail beyond the governed end.",
+      "sourceTreatment": {"strategy": "Keep the whole end-card source and its baked upper tonal band; place editable text with comfortable separation from the arc.", "allowMask": false, "allowSourceDerivedCleanup": false},
+      "fallback": "Contain the intact source beneath a plain upper typography field, holding product and complete line at readable sizes through the final frame.",
+      "riskNotes": ["Asset-generation notes mention branding, but the governed storyboard supplies only the closing line; do not introduce extra copy.", "The upper tonal band must not be patched or mistaken for a separate movable layer."]
+    }
+  ],
+  "typographyDirection": {
+    "hierarchy": "Use a restrained modern sans-serif, medium weight, warm off-white, modest fixed tracking. Product remains dominant; support statements share one scale, and the longer closing statement may reduce scale or wrap without changing wording.",
+    "motionPrinciple": "Complete phrases arrive by short opacity reveals with fixed position and tracking; no stagger, bounce, blur, word replacement or exit animation.",
+    "readabilityRule": "Typeset only the governed copy at runtime. Keep text within the upper negative-space zone with a clear product gap; use a separate plain field with the entire source contained if contrast or collision fails. Resolve all reveals early and preserve full-copy holds."
+  },
+  "audioDirection": {
+    "structure": "Sparse low foundation, exposed material texture, editorial punctuation, one controlled warm opening, a near-silent spatial rest, then settled warmth and a restrained resolution. No voiceover or driving percussion grid.",
+    "cuePolicy": "Inherit every cue and its boundary from the storyboard. Governed low accents are rounded punctuation with different contextual weight; the activation cue is a sustained rise rather than a transient hit. Do not invent cues on uncued beats or add an impact cue.",
+    "dynamicIntent": "The activation has the broadest tonal opening, not the hardest transient. The breathing-room beat has the lowest sustained density. Preserve quiet contrast at phone playback levels and mono compatibility; resolve audio within the governed endpoint."
+  },
+  "masteringIntent": {
+    "color": "SDR BT.709; preserve neutral graphite, warm amber, shadow separation and textured highlights without HDR-style bloom or crushed blacks.",
+    "pixelFormat": "yuv420p",
+    "deliveryNotes": "Inherit delivery dimensions, frame rate and duration from governed inputs. Later implementation must verify actual color conversion and signaling, decode integrity, quiet-detail retention and full-speed human playback; design validation is not media acceptance."
+  },
+  "riskFallbacks": [
+    {"risk": "Flattened imagery cannot safely support extraction, emitter-only animation or independent spatial layers.", "fallback": "Use the intact assigned source with uniform treatment only; isolation and cleanup are disabled in this design and are never prerequisites."},
+    {"risk": "Typography competes with the product or existing source bands.", "fallback": "Use a fixed plain upper text field and contain the entire assigned source below it without stretching, masking or filling missing background."},
+    {"risk": "Activation attenuation obscures the object or creates visible tonal steps.", "fallback": "Reduce attenuation; if unsafe at any strength, hold native source appearance and retain the audio rise without inventing optical behavior."},
+    {"risk": "Subtle motion damages crop safety or suggests false parallax.", "fallback": "Remove camera motion and retain intentional hard cuts and stable holds."},
+    {"risk": "Source discontinuities remain visible at delivery size.", "fallback": "Preserve and disclose them; if unacceptable in independent review, hold for governance instead of repairing canonical imagery."}
+  ]
+}

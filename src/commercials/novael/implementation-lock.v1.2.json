@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "campaignId": "NVA-002",
+  "creativeDirection": "commercials/novael-arc/design/creative-direction.v1.2.json",
+  "creativeDirectionSha256": "7E011AAFE48DF49EE1D6260CDC5D9A9C91AC0EE21A6E05B2B22ED2152298164B",
+  "implementationRecipe": "src/commercials/novael/recipe.ts"
+}

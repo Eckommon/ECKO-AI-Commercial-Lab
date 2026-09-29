@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import {validateAuroraCampaign} from '../factory/validate-contract.mjs';
+import {validateAuroraCampaign} from '../factory/validate-campaigns.mjs';
 
 const projectRoot = process.cwd();
 const required = [
@@ -57,6 +57,7 @@ const cases = [
   ['fps drift', 'brief', (x) => { x.fps = 24; }, /format|fps/i],
   ['resolution drift', 'brief', (x) => { x.resolution = '1920x1080'; }, /format|resolution/i],
   ['unsupported claim', 'brief', (x) => { x.supportCopy.push('BOOSTS ENERGY.'); }, /support|claim|copy/i],
+  ['claims policy drift', 'brief', (x) => { x.claims = ['Improves focus.']; }, /claim/i],
   ['missing treatment', 'design', (x) => { x.beatTreatments.pop(); }, /treatment|coverage/i],
   ['duplicate treatment', 'design', (x) => { x.beatTreatments[8].beatId = 'S08'; }, /duplicate|treatment/i],
   ['unknown treatment', 'design', (x) => { x.beatTreatments[8].beatId = 'S10'; }, /unknown|treatment|coverage/i],
@@ -114,4 +115,22 @@ for (const [name, alter, message] of [
   }
 }
 
-console.log(`PASS: ${cases.length + 4} adversarial contract mutations rejected`);
+{
+  const root = cloneFixture();
+  try {
+    const designPath = jsonPath(root, 'design');
+    const approvedLf = fs.readFileSync(designPath, 'utf8').replace(/\r\n/g, '\n');
+    fs.writeFileSync(designPath, approvedLf);
+    validateAuroraCampaign({root});
+    fs.writeFileSync(designPath, approvedLf.replace(/\n/g, '\r\n'));
+    assert.throws(
+      () => validateAuroraCampaign({root}),
+      /implementation binding|SHA-256/i,
+      'creative-direction line-ending byte drift',
+    );
+  } finally {
+    fs.rmSync(root, {recursive: true, force: true});
+  }
+}
+
+console.log(`PASS: ${cases.length + 5} adversarial contract mutations rejected`);
