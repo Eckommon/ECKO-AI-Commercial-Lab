@@ -1,0 +1,187 @@
+{
+  "campaignId": "NVA-002",
+  "thesis": "NOVAEL ARC turns ambient light into a sculptural focal point worth pausing for. The advertisement makes the crescent silhouette, the phrase LIGHT, HELD AS FORM., and a rising three-note arc inseparable in memory.",
+  "productPriority": {
+    "principle": "Recognize the complete lamp by 2.2 seconds, name NOVAEL ARC by 3.2 seconds, then move between whole-object, material and light-event views without losing geometry or confusing graphic expression with product behavior.",
+    "heroHoldPolicy": "Movement earns attention, but every major motion resolves into a readable product state. The hook resolves to the complete arc, the light event resolves to a three-second hero state, and the final NOVAEL ARC lockup holds fully formed from 27.2 through 30.0 seconds.",
+    "atmosphereLimit": "Charcoal, graphite, stone and amber remain the only world. Graphic arc light, tonal sweeps and parallax may organize the frame, but no invented beam, room extension, product control, fake orbit from still pixels or unsupported physical behavior is allowed."
+  },
+  "visualHierarchy": [
+    "The continuous crescent silhouette and base, recognizable at 360x640",
+    "The NOVAEL ARC name, introduced early and repeated on the close",
+    "The frosted inner arc and controlled amber transformation",
+    "The positioning line LIGHT, HELD AS FORM. and campaign line HOLD THE LIGHT.",
+    "Stone, graphite texture and negative space as supporting material context"
+  ],
+  "sceneFamilies": [
+    {
+      "id": "arc-hook",
+      "purpose": "Create immediate curiosity with a fast source-authentic macro-to-whole reveal and the first half of the visual and sonic mnemonic.",
+      "allowedTechniques": ["Purpose-shot motion plate", "Rhythmic macro cuts", "Graphic arc-trace wipe aligned to the real diffuser curve", "Opening transient synchronized to first visible edge"],
+      "avoid": ["Still-image opacity reveal", "Fake 3D orbit from a flattened source", "Unrecognizable darkness beyond 0.7 seconds", "Trailer impact grammar"]
+    },
+    {
+      "id": "recognition-lock",
+      "purpose": "Resolve motion into a whole product and bind the name NOVAEL ARC to the silhouette early.",
+      "allowedTechniques": ["Short controlled push", "Kinetic two-stage name assembly", "Arc-shaped matte over a whole source", "Settled readable hold"],
+      "avoid": ["Long static hold", "Product-crossing type", "Tiny wordmark", "Geometry-changing masks"]
+    },
+    {
+      "id": "material-seduction",
+      "purpose": "Make graphite, frosted material and curvature desirable through real or source-safe movement rather than technical explanation.",
+      "allowedTechniques": ["Purpose-shot macro glide", "Source-safe traversal inside the authored detail plate", "Specular rhythm that already exists in source", "Tactile material accents"],
+      "avoid": ["Invented seams", "Technical labels", "Synthetic sharpening", "Parallax between inseparable flattened surfaces"]
+    },
+    {
+      "id": "light-event",
+      "purpose": "Deliver the commercial peak: a genuine motion plate whose warm illumination increases globally and spatially coherently across the existing diffuser while a restrained exterior graphic arc supplies the directional mnemonic.",
+      "allowedTechniques": ["Purpose-shot light transformation plate", "Slow push during actual plate motion", "Amber arc echo outside product geometry", "Synchronized tonal rise and arrival accent"],
+      "avoid": ["Brightness tween presented as a product startup", "Emitter extraction from stills", "Neon bloom", "Unsupported performance implication"]
+    },
+    {
+      "id": "controlled-release",
+      "purpose": "Use brief stillness and negative space as contrast after the peak while residual motion and audio decay preserve continuity.",
+      "allowedTechniques": ["Decelerating push", "One clean hard cut", "Residual arc echo", "Near-silence with audible room tone"],
+      "avoid": ["Five-second freeze", "Immediate new climax", "Full audio dropout", "Unmotivated source change"]
+    },
+    {
+      "id": "brand-memory",
+      "purpose": "Repeat the proposition, land the complete product/name/campaign line, and resolve the three-note mnemonic without an outgoing fade.",
+      "allowedTechniques": ["Whole-product hero motion plate", "Arc wipe into end card", "Editable name and campaign line", "Minimum 2.8-second complete lockup", "Final three-note mnemonic"],
+      "avoid": ["Generic logo sting", "Copy appearing only at the last instant", "Fade to black", "New claims or CTA"]
+    }
+  ],
+  "beatTreatments": [
+    {
+      "beatId": "S01",
+      "sceneFamily": "arc-hook",
+      "visualPriority": "A warm edge cuts through black, then a real macro move exposes enough of the crescent to create curiosity before the whole object is shown.",
+      "cameraIntent": "Use ADD novael-arc-hook-sweep-v1.mp4: rapid 0.0-0.45 second macro acceleration along the inner curve, then decelerate toward a partial three-quarter silhouette by 1.5 seconds.",
+      "typographyIntent": "No copy; the first frame must remain visually simple and legible on a phone.",
+      "transitionIntent": "A thin graphic arc trace follows the real inner curve and becomes the wipe edge into S02; this is graphic expression, not emitted product light.",
+      "audioIntent": "Start with a tactile stone click plus a 120 ms reverse-air pull, then state notes one and two of the three-note mnemonic as the edge and crescent appear.",
+      "sourceTreatment": {"strategy": "Mandatory purpose-shot motion plate, classified ADD and currently unavailable. No still-based substitute is permitted for final production.", "allowMask": true, "allowSourceDerivedCleanup": false},
+      "fallback": "If the plate is unavailable or geometry fails reference review, stop implementation with MISSING_MANDATORY_MOTION_SOURCE; a still zoom is not an acceptable fallback.",
+      "riskNotes": ["The product must become readable by 1.5 seconds without revealing a different geometry.", "The arc matte must follow the visible diffuser and may not imply a controllable chase-light feature."]
+    },
+    {
+      "beatId": "S02",
+      "sceneFamily": "recognition-lock",
+      "visualPriority": "The full lamp and base resolve immediately; NOVAEL ARC enters large in clean upper-left negative space and binds name to object.",
+      "cameraIntent": "Rework shot-01-hero.png with a 2.5 percent push that settles by 2.7 seconds; keep base, tip and contact shadow continuously visible.",
+      "typographyIntent": "NOVAEL arrives as one word at 1.75 seconds; ARC tracks along a short arc path and locks beside it by 2.25 seconds. Hold the complete name through 4.0 seconds.",
+      "transitionIntent": "Complete the S01 arc wipe in the first 0.25 seconds, settle, then cut on a material tick into S03.",
+      "audioIntent": "Land note three of the mnemonic at full-product recognition; a restrained tonal bed begins, with no low-frequency impact masking phone playback.",
+      "sourceTreatment": {"strategy": "KEEP shot-01-hero.png intact as the recognition anchor; a campaign-specific curved matte may reveal the whole plate but must never isolate or deform the product.", "allowMask": true, "allowSourceDerivedCleanup": false},
+      "fallback": "Use a direct cut to the intact hero and a shorter 1.5 percent push; preserve the early complete-name hold.",
+      "riskNotes": ["The name must remain readable at 360x640.", "No crop may lose the arc tip or base."]
+    },
+    {
+      "beatId": "S03",
+      "sceneFamily": "material-seduction",
+      "visualPriority": "Graphite texture, frosted diffuser and the shell junction move through frame with tactile clarity.",
+      "cameraIntent": "Use ADD novael-arc-material-glide-v1.mp4 for a genuine 3.0-second lateral macro glide matching the canonical curvature; shot-02-detail.png remains the texture and framing reference.",
+      "typographyIntent": "No copy; material motion and two precise sound accents carry the beat.",
+      "transitionIntent": "Hard cut on the first material tick; end with a six-frame amber arc wipe that reveals S04.",
+      "audioIntent": "Two quiet tactile accents, frosted-glass brush at 4.25 seconds and muted graphite tap at 5.65 seconds, articulate the glide over the tonal bed.",
+      "sourceTreatment": {"strategy": "REWORK shot-02-detail.png as a reference and optional six-frame insert only; mandatory ADD motion plate is currently unavailable and must preserve exact shell thickness and diffuser path.", "allowMask": false, "allowSourceDerivedCleanup": false},
+      "fallback": "If only the still remains, allow at most a 0.7-second source-safe traversal as an insert, then hold the design for missing motion rather than stretching it to fill three seconds.",
+      "riskNotes": ["Macro generation can invent seams or change shell thickness.", "The motion plate must remain recognizable as the same lamp."]
+    },
+    {
+      "beatId": "S04",
+      "sceneFamily": "material-seduction",
+      "visualPriority": "The whole arc returns as an editorial silhouette while the positioning line makes its emotional association explicit.",
+      "cameraIntent": "Use shot-01-hero.png in a controlled 2 percent pull-back while a source-following arc window opens negative space; resolve by 9.5 seconds.",
+      "typographyIntent": "Reveal LIGHT, HELD AS FORM. in three rhythmic groups: LIGHT, at 7.35; HELD AS at 8.05; FORM. at 8.75. All words are fully readable by 9.0 and remain fixed to 10.5.",
+      "transitionIntent": "Enter under the amber arc wipe; use a two-frame luminance dip at 10.5 seconds to create anticipation without simulating a lamp power state.",
+      "audioIntent": "Each copy group receives a soft harmonic pulse derived from the mnemonic pitches; the bed narrows and suspends before the hero event.",
+      "sourceTreatment": {"strategy": "REWORK the intact shot-01-hero.png with whole-plate camera motion and a graphic mask confined to background/negative space; no object extraction.", "allowMask": true, "allowSourceDerivedCleanup": false},
+      "fallback": "Remove the arc window and use fixed high-contrast type above a 1.5 percent whole-plate pull-back.",
+      "riskNotes": ["Kinetic type must remain readable rather than decorative.", "Graphic arc treatment must be clearly editorial, not a product-light behavior."]
+    },
+    {
+      "beatId": "S05",
+      "sceneFamily": "light-event",
+      "visualPriority": "A real, continuous warm-light transformation increases globally and spatially coherently across the familiar diffuser, preserving its topology and relative illumination pattern as it resolves to the illuminated hero.",
+      "cameraIntent": "Use ADD novael-arc-light-event-v1.mp4: begin in the same three-quarter state as S04, execute a slow maximum 3 percent push while the product illumination rises globally without an internal directional chase, then hold the fully lit product from 14.4 to 15.5 seconds. Base-to-tip direction belongs only to the exterior graphic arc trace outside the product silhouette.",
+      "typographyIntent": "No copy during the transformation; product and synchronized sound own the commercial peak.",
+      "transitionIntent": "Begin after the two-frame dip. A restrained exterior amber arc trace may travel from base-side to tip-side only outside the product silhouette and complete 120 ms after the globally lit plate reaches its hero state; hard cut on resonance into S06.",
+      "audioIntent": "Build the three-note mnemonic across 10.5-14.2 seconds with widening harmonic layers, one breath-like lift, and a bright but soft arrival at 14.2 seconds; no cinematic boom.",
+      "sourceTreatment": {"strategy": "Mandatory purpose-shot motion plate, classified ADD and currently unavailable. The actual plate must contain a globally coherent illumination increase with stable diffuser topology, relative illumination pattern, geometry and material boundaries; code may add directional movement only as a clearly graphic exterior arc echo outside the silhouette.", "allowMask": true, "allowSourceDerivedCleanup": false},
+      "fallback": "If unavailable, stop with MISSING_MANDATORY_LIGHT_EVENT. Do not crossfade or brightness-tween shot-01 into shot-04 as a substitute.",
+      "riskNotes": ["Reference-guided motion may drift geometry or turn the diffuser into neon.", "Any internal region-to-region or base-to-tip chase inside the product is prohibited.", "The event must not imply speed, dimming or controllability claims."]
+    },
+    {
+      "beatId": "S06",
+      "sceneFamily": "controlled-release",
+      "visualPriority": "The complete lit arc rests in frame long enough to register after the peak, while a faint graphic afterimage exits.",
+      "cameraIntent": "Rework shot-04-lit.png with a decelerating 1.5 percent push that stops by 17.2 seconds; retain a stable hero for the final 1.3 seconds.",
+      "typographyIntent": "No copy; this is intentional contrast, not dead time.",
+      "transitionIntent": "Hard cut from the motion plate to the matched lit still; a low-opacity arc echo dissipates by 16.4 seconds. Cut at 18.5 on a dry stone tick.",
+      "audioIntent": "Let the hero resonance decay while preserving audible warm room tone; create a 350 ms near-silent pocket before the exit tick.",
+      "sourceTreatment": {"strategy": "REWORK shot-04-lit.png as a settled hero anchor; whole plate remains intact and the graphic echo stays outside the product silhouette.", "allowMask": true, "allowSourceDerivedCleanup": false},
+      "fallback": "Use the intact lit plate with only the residual graphic echo and a 1 percent push; never extend total stillness beyond 1.3 seconds.",
+      "riskNotes": ["Match color and scale to the end state of the required motion plate.", "The quiet pocket must remain audible enough to feel intentional on phone speakers."]
+    },
+    {
+      "beatId": "S07",
+      "sceneFamily": "brand-memory",
+      "visualPriority": "A final genuine camera glide around the recognizable whole product converts the release into renewed desire before the close.",
+      "cameraIntent": "Use ADD novael-arc-hero-glide-v1.mp4: a subtle 4.5-second three-quarter lateral move with constant lens height, ending in the exact centered composition required for S08.",
+      "typographyIntent": "NOVAEL ARC appears briefly at 21.0 seconds as a fixed small signature, then clears by 22.6 before the next statement.",
+      "transitionIntent": "Hard cut on a stone tick into the genuine glide; use the moving product edge to motivate an arc-shaped wipe into S08.",
+      "audioIntent": "Reintroduce the mnemonic rhythm in shortened form over a more present pulse; material texture and tonal bed move together without becoming percussion-driven.",
+      "sourceTreatment": {"strategy": "Mandatory purpose-shot motion plate, classified ADD and currently unavailable; must preserve canonical geometry, materials, base and warm emission.", "allowMask": true, "allowSourceDerivedCleanup": false},
+      "fallback": "If unavailable, stop implementation with MISSING_MANDATORY_HERO_GLIDE. Reusing a still pan for 4.5 seconds would recreate the rejected slideshow failure.",
+      "riskNotes": ["Camera motion must not expose inconsistent unseen geometry.", "The small signature is a reinforcement, not the primary phone-scale name exposure."]
+    },
+    {
+      "beatId": "S08",
+      "sceneFamily": "brand-memory",
+      "visualPriority": "The illuminated product settles while HOLD THE LIGHT. lands as a direct campaign statement and the arc trace returns once.",
+      "cameraIntent": "Use the last frame family of the hero glide, then transition to shot-04-lit.png with a maximum 1 percent continuation push that settles by 25.0 seconds.",
+      "typographyIntent": "HOLD THE LIGHT. rises as a complete line from the lower third at 23.35 seconds, fully readable by 23.8 and held through 26.5.",
+      "transitionIntent": "Arc wipe enters from the product tip and completes by 23.35 seconds; a clean hard cut at 26.5 opens the final card.",
+      "audioIntent": "State notes one and two of the final mnemonic beneath the line; leave note three unresolved until the final name locks in S09.",
+      "sourceTreatment": {"strategy": "REWORK shot-04-lit.png as the settled endpoint after the mandatory hero glide; use intact plate and editable type.", "allowMask": true, "allowSourceDerivedCleanup": false},
+      "fallback": "Use a direct cut to the intact lit plate and retain the campaign line timing; do not add extra copy.",
+      "riskNotes": ["The campaign line must not collide with the base or reflection.", "Continuity depends on matching the preceding motion plate's endpoint."]
+    },
+    {
+      "beatId": "S09",
+      "sceneFamily": "brand-memory",
+      "visualPriority": "The complete product, NOVAEL ARC name and HOLD THE LIGHT. campaign line form one unmistakable advertisement at phone scale.",
+      "cameraIntent": "Use shot-05-endcard.png at fixed framing; after a 0.35-second arc wipe, hold without camera movement through the final frame.",
+      "typographyIntent": "NOVAEL ARC locks by 27.2 seconds at primary scale; HOLD THE LIGHT. sits beneath at secondary scale. Both remain fully visible for 2.8 seconds.",
+      "transitionIntent": "One final arc trace draws toward the product tip and disappears by 27.35 seconds; no outgoing fade, black frame or copy exit.",
+      "audioIntent": "Land note three with a distinctive warm glass-and-stone brand sting at 27.15 seconds, sustain a short harmonic tail, and reach digital silence by 29.92 seconds without extending past frame 899.",
+      "sourceTreatment": {"strategy": "REWORK shot-05-endcard.png as the intact closing plate; preserve the baked upper band and place all typography as editable runtime layers.", "allowMask": true, "allowSourceDerivedCleanup": false},
+      "fallback": "Use a plain charcoal typography field above a contained intact source if the native negative space cannot meet 360x640 readability; keep both name and campaign line.",
+      "riskNotes": ["The baked top band must be accepted or disclosed, never patched.", "Final copy must remain complete for the full 2.8-second memory hold."]
+    }
+  ],
+  "typographyDirection": {
+    "hierarchy": "Use a bold modern grotesk for NOVAEL ARC, a medium-weight grotesk for LIGHT, HELD AS FORM., and a smaller but still phone-legible HOLD THE LIGHT. Avoid hairlines. At 1080x1920, primary name cap height must be at least 92 px and secondary lines at least 58 px; verify at 360x640.",
+    "motionPrinciple": "Type moves only when it strengthens rhythm: ARC follows a short geometric curve once, proposition groups arrive on three harmonic pulses, and the campaign line rises as one unit. Every animation resolves into fixed readable type; no letter rain, blur-dependent reading or continuous tracking motion.",
+    "readabilityRule": "All copy is editable and explicitly limited to NOVAEL ARC, LIGHT, HELD AS FORM., and HOLD THE LIGHT. Use warm off-white against measured charcoal contrast, keep text clear of product/base/reflection, and require 360x640 review of every full-copy hold."
+  },
+  "audioDirection": {
+    "structure": "A tactile click and reverse-air hook opens a warm three-note rising mnemonic. A restrained tonal bed then supports material ticks, narrows before the light event, expands with the transformation, falls to a deliberate near-silent pocket, returns with a more present pulse, and resolves as a glass-and-stone brand sting.",
+    "cuePolicy": "Every visible editorial action has a planned sonic role: edge reveal, full-product recognition, two material contacts, three proposition pulses, light-event rise and arrival, release pocket, campaign-line setup, and final mnemonic resolution. Accents must be audible in mono on phone speakers and must not imply mechanical operation.",
+    "dynamicIntent": "The light event is the broadest and most energetic passage; S06 provides contrast without becoming inaudible; the final sting is distinctive but not louder than the hero arrival. The mix must feel materially weaker when muted because the mnemonic supplies anticipation, punctuation and recall, not merely background atmosphere."
+  },
+  "masteringIntent": {
+    "color": "SDR BT.709 with neutral graphite, warm amber, visible shadow separation and protected diffuser texture; motion plates must be graded to the canonical stills without HDR-style bloom or black crush.",
+    "pixelFormat": "yuv420p",
+    "deliveryNotes": "Preserve 1080x1920, 30 fps and exactly 900 frames / 30.000 seconds. Later production must validate motion-source identity, copy holds, cue sync, mono compatibility, loudness and true peak, full decode, temporal continuity and human full-speed audiovisual playback."
+  },
+  "riskFallbacks": [
+    {"risk": "The three mandatory motion plates and one mandatory hero-glide plate are unavailable or fail product-identity review.", "fallback": "Fail closed before production. Do not stretch stills, synthesize fake depth or recreate the rejected slideshow grammar."},
+    {"risk": "Reference-guided motion changes arch curvature, shell thickness, diffuser path, base proportions or material boundaries.", "fallback": "Reject and regenerate the offending plate against shot-01-hero.png; no geometry repair in compositing."},
+    {"risk": "Arc wipes or echoes read as a product feature rather than graphic expression.", "fallback": "Move the graphic outside the silhouette, shorten it, and retain motion/cue rhythm without a chase along the physical diffuser."},
+    {"risk": "Kinetic typography becomes decorative or unreadable at phone scale.", "fallback": "Collapse to whole-phrase reveals at the same timing and preserve all fixed holds and hierarchy."},
+    {"risk": "The current stills' baked bands, flattening or mismatched framing break motion continuity.", "fallback": "Use the reviewed intact plate only at settled anchors; if the discontinuity remains visible, hold for a replacement source rather than patching canonical pixels."},
+    {"risk": "The richer sound design masks detail or disappears in mono and phone playback.", "fallback": "Reduce bed density, preserve the three mnemonic pitches and tactile transients, and re-balance from mono-first monitoring before mastering."}
+  ]
+}
